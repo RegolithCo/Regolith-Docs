@@ -1,0 +1,100 @@
+---
+id: vehicle-ore-enum
+title: VehicleOreEnum
+---
+
+export const Bullet = () => (
+  <>
+    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
+      &nbsp;●&nbsp;
+    </span>
+  </>
+)
+
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
+      target="_blank"
+      href={props.url}
+      title={'Specified by ' + props.url}
+    >
+      ⎘
+    </a>
+  </>
+)
+
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+)
+
+import { useState } from 'react'
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen)
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
+    >
+      <summary
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen((open) => !open)
+        }}
+        style={{ listStyle: 'none' }}
+      >
+        {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  )
+}
+
+No description
+
+```graphql
+enum VehicleOreEnum {
+  APHORITE
+  BERADOM
+  CARINITE
+  DOLIVINE
+  FEYNMALINE
+  GLACOSITE
+  HADANITE
+  JACLIUM
+  JANALITE
+  SALDYNIUM
+}
+```
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>VehicleOreEnum.<b>APHORITE</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>VehicleOreEnum.<b>BERADOM</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>VehicleOreEnum.<b>CARINITE</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>VehicleOreEnum.<b>DOLIVINE</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>VehicleOreEnum.<b>FEYNMALINE</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>VehicleOreEnum.<b>GLACOSITE</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>VehicleOreEnum.<b>HADANITE</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>VehicleOreEnum.<b>JACLIUM</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>VehicleOreEnum.<b>JANALITE</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>VehicleOreEnum.<b>SALDYNIUM</b></code>](#)
+
+### Member Of
+
+[`createSession`](/api/operations/mutations/create-session.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateSession`](/api/operations/mutations/update-session.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateUserProfile`](/api/operations/mutations/update-user-profile.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`VehicleMiningRow`](/api/types/objects/vehicle-mining-row.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleMiningRowInput`](/api/types/inputs/vehicle-mining-row-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`VehicleRockOre`](/api/types/objects/vehicle-rock-ore.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleRockOreInput`](/api/types/inputs/vehicle-rock-ore-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`WorkOrderDefaults`](/api/types/objects/work-order-defaults.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/>

@@ -1,0 +1,76 @@
+---
+id: vehicle-rock-ore-input
+title: VehicleRockOreInput
+---
+
+export const Bullet = () => (
+  <>
+    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
+      &nbsp;●&nbsp;
+    </span>
+  </>
+)
+
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
+      target="_blank"
+      href={props.url}
+      title={'Specified by ' + props.url}
+    >
+      ⎘
+    </a>
+  </>
+)
+
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+)
+
+import { useState } from 'react'
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen)
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
+    >
+      <summary
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen((open) => !open)
+        }}
+        style={{ listStyle: 'none' }}
+      >
+        {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  )
+}
+
+No description
+
+```graphql
+input VehicleRockOreInput {
+  ore: VehicleOreEnum!
+  percent: Float!
+}
+```
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>VehicleRockOreInput.<b>ore</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>VehicleOreEnum!</b></code>](/api/types/enums/vehicle-ore-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>VehicleRockOreInput.<b>percent</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float!</b></code>](/api/types/scalars/float.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+
+### Member Of
+
+[`VehicleRockInput`](/api/types/inputs/vehicle-rock-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/>

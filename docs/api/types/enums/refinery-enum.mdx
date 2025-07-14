@@ -1,0 +1,118 @@
+---
+id: refinery-enum
+title: RefineryEnum
+---
+
+export const Bullet = () => (
+  <>
+    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
+      &nbsp;●&nbsp;
+    </span>
+  </>
+)
+
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
+      target="_blank"
+      href={props.url}
+      title={'Specified by ' + props.url}
+    >
+      ⎘
+    </a>
+  </>
+)
+
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+)
+
+import { useState } from 'react'
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen)
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
+    >
+      <summary
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen((open) => !open)
+        }}
+        style={{ listStyle: 'none' }}
+      >
+        {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  )
+}
+
+No description
+
+```graphql
+enum RefineryEnum {
+  ARCL1
+  ARCL2
+  ARCL4
+  CRUL1
+  HURL1
+  HURL2
+  MAGNG
+  MICL1
+  MICL2
+  MICL5
+  PYROG
+  PYRO_CHECKMATE
+  PYRO_ORBITUARY
+  PYRO_RUIN
+  PYRO_STANTG
+  TERRG
+}
+```
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>ARCL1</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>ARCL2</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>ARCL4</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>CRUL1</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>HURL1</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>HURL2</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>MAGNG</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>MICL1</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>MICL2</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>MICL5</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>PYROG</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>PYRO_CHECKMATE</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>PYRO_ORBITUARY</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>PYRO_RUIN</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>PYRO_STANTG</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryEnum.<b>TERRG</b></code>](#)
+
+### Member Of
+
+[`SessionSummary`](/api/types/objects/session-summary.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipMiningOrder`](/api/types/objects/ship-mining-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipMiningOrderCapture`](/api/types/objects/ship-mining-order-capture.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`WorkOrderDefaults`](/api/types/objects/work-order-defaults.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`WorkOrderDefaultsInput`](/api/types/inputs/work-order-defaults-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`WorkOrderInput`](/api/types/inputs/work-order-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/>

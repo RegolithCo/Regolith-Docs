@@ -1,0 +1,124 @@
+---
+id: mining-laser-enum
+title: MiningLaserEnum
+---
+
+export const Bullet = () => (
+  <>
+    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
+      &nbsp;●&nbsp;
+    </span>
+  </>
+)
+
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
+      target="_blank"
+      href={props.url}
+      title={'Specified by ' + props.url}
+    >
+      ⎘
+    </a>
+  </>
+)
+
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+)
+
+import { useState } from 'react'
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen)
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
+    >
+      <summary
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen((open) => !open)
+        }}
+        style={{ listStyle: 'none' }}
+      >
+        {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  )
+}
+
+No description
+
+```graphql
+enum MiningLaserEnum {
+  ArborMH1
+  ArborMH2
+  ArborMHV
+  Helix0
+  HelixI
+  HelixII
+  HofstedeS0
+  HofstedeS1
+  HofstedeS2
+  ImpactI
+  ImpactII
+  KleinS0
+  KleinS1
+  KleinS2
+  LancetMH1
+  LancetMH2
+  Lawson
+  Pitman
+}
+```
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>ArborMH1</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>ArborMH2</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>ArborMHV</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>Helix0</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>HelixI</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>HelixII</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>HofstedeS0</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>HofstedeS1</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>HofstedeS2</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>ImpactI</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>ImpactII</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>KleinS0</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>KleinS1</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>KleinS2</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>LancetMH1</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>LancetMH2</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>Lawson</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningLaserEnum.<b>Pitman</b></code>](#)
+
+### Member Of
+
+[`ActiveMiningLaserLoadout`](/api/types/objects/active-mining-laser-loadout.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ActiveMiningLaserLoadoutInput`](/api/types/inputs/active-mining-laser-loadout-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`MiningLoadout`](/api/types/objects/mining-loadout.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`MiningLoadoutInput`](/api/types/inputs/mining-loadout-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/>

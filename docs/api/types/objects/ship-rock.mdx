@@ -1,0 +1,88 @@
+---
+id: ship-rock
+title: ShipRock
+---
+
+export const Bullet = () => (
+  <>
+    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
+      &nbsp;●&nbsp;
+    </span>
+  </>
+)
+
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
+      target="_blank"
+      href={props.url}
+      title={'Specified by ' + props.url}
+    >
+      ⎘
+    </a>
+  </>
+)
+
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+)
+
+import { useState } from 'react'
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen)
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
+    >
+      <summary
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen((open) => !open)
+        }}
+        style={{ listStyle: 'none' }}
+      >
+        {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  )
+}
+
+No description
+
+```graphql
+type ShipRock {
+  inst: Float
+  mass: Float!
+  ores: [ShipRockOre!]!
+  res: Float
+  rockType: RockType
+  state: RockStateEnum!
+}
+```
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipRock.<b>inst</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float</b></code>](/api/types/scalars/float.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipRock.<b>mass</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float!</b></code>](/api/types/scalars/float.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipRock.<b>ores</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[ShipRockOre!]!</b></code>](/api/types/objects/ship-rock-ore.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipRock.<b>res</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float</b></code>](/api/types/scalars/float.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipRock.<b>rockType</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>RockType</b></code>](/api/types/scalars/rock-type.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipRock.<b>state</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>RockStateEnum!</b></code>](/api/types/enums/rock-state-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/>
+
+### Member Of
+
+[`ShipClusterFind`](/api/types/objects/ship-cluster-find.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/>

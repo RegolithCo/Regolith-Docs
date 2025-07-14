@@ -1,0 +1,81 @@
+---
+id: work-order
+title: WorkOrder
+---
+
+export const Bullet = () => (
+  <>
+    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
+      &nbsp;●&nbsp;
+    </span>
+  </>
+)
+
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
+      target="_blank"
+      href={props.url}
+      title={'Specified by ' + props.url}
+    >
+      ⎘
+    </a>
+  </>
+)
+
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+)
+
+import { useState } from 'react'
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen)
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
+    >
+      <summary
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen((open) => !open)
+        }}
+        style={{ listStyle: 'none' }}
+      >
+        {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  )
+}
+
+No description
+
+```graphql
+union WorkOrder = OtherOrder | SalvageOrder | ShipMiningOrder | VehicleMiningOrder
+```
+
+### Possible types
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrder.<b>OtherOrder</b></code>](/api/types/objects/other-order.mdx) <Badge class="badge badge--secondary " text="object"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrder.<b>SalvageOrder</b></code>](/api/types/objects/salvage-order.mdx) <Badge class="badge badge--secondary " text="object"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrder.<b>ShipMiningOrder</b></code>](/api/types/objects/ship-mining-order.mdx) <Badge class="badge badge--secondary " text="object"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrder.<b>VehicleMiningOrder</b></code>](/api/types/objects/vehicle-mining-order.mdx) <Badge class="badge badge--secondary " text="object"/>
+
+### Returned By
+
+[`claimWorkOrder`](/api/operations/mutations/claim-work-order.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`createWorkOrder`](/api/operations/mutations/create-work-order.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`deleteWorkOrder`](/api/operations/mutations/delete-work-order.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`deliverWorkOrder`](/api/operations/mutations/deliver-work-order.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`failWorkOrder`](/api/operations/mutations/fail-work-order.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateWorkOrder`](/api/operations/mutations/update-work-order.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`workOrder`](/api/operations/queries/work-order.mdx) <Badge class="badge badge--secondary badge--relation" text="query"/>
+
+### Member Of
+
+[`CrewShare`](/api/types/objects/crew-share.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`PaginatedWorkOrders`](/api/types/objects/paginated-work-orders.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/>

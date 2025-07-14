@@ -1,0 +1,103 @@
+---
+id: work-order-defaults
+title: WorkOrderDefaults
+---
+
+export const Bullet = () => (
+  <>
+    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
+      &nbsp;●&nbsp;
+    </span>
+  </>
+)
+
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
+      target="_blank"
+      href={props.url}
+      title={'Specified by ' + props.url}
+    >
+      ⎘
+    </a>
+  </>
+)
+
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+)
+
+import { useState } from 'react'
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen)
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
+    >
+      <summary
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen((open) => !open)
+        }}
+        style={{ listStyle: 'none' }}
+      >
+        {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  )
+}
+
+No description
+
+```graphql
+type WorkOrderDefaults {
+  crewShares: [CrewShareTemplate!]
+  includeTransferFee: Boolean
+  isRefined: Boolean
+  lockedFields: [String!]
+  method: RefineryMethodEnum
+  refinery: RefineryEnum
+  salvageOres: [SalvageOreEnum!]
+  sellStores: SellStores
+  shareRefinedValue: Boolean
+  shipOres: [ShipOreEnum!]
+  vehicleOres: [VehicleOreEnum!]
+}
+```
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderDefaults.<b>crewShares</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[CrewShareTemplate!]</b></code>](/api/types/objects/crew-share-template.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="object"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderDefaults.<b>includeTransferFee</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderDefaults.<b>isRefined</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderDefaults.<b>lockedFields</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderDefaults.<b>method</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>RefineryMethodEnum</b></code>](/api/types/enums/refinery-method-enum.mdx) <Badge class="badge badge--secondary " text="enum"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderDefaults.<b>refinery</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>RefineryEnum</b></code>](/api/types/enums/refinery-enum.mdx) <Badge class="badge badge--secondary " text="enum"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderDefaults.<b>salvageOres</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[SalvageOreEnum!]</b></code>](/api/types/enums/salvage-ore-enum.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="enum"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderDefaults.<b>sellStores</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SellStores</b></code>](/api/types/objects/sell-stores.mdx) <Badge class="badge badge--secondary " text="object"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderDefaults.<b>shareRefinedValue</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderDefaults.<b>shipOres</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[ShipOreEnum!]</b></code>](/api/types/enums/ship-ore-enum.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="enum"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderDefaults.<b>vehicleOres</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[VehicleOreEnum!]</b></code>](/api/types/enums/vehicle-ore-enum.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="enum"/>
+
+### Member Of
+
+[`SessionSettings`](/api/types/objects/session-settings.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/>

@@ -1,0 +1,85 @@
+---
+id: work-order-state-enum
+title: WorkOrderStateEnum
+---
+
+export const Bullet = () => (
+  <>
+    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
+      &nbsp;●&nbsp;
+    </span>
+  </>
+)
+
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
+      target="_blank"
+      href={props.url}
+      title={'Specified by ' + props.url}
+    >
+      ⎘
+    </a>
+  </>
+)
+
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+)
+
+import { useState } from 'react'
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen)
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
+    >
+      <summary
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen((open) => !open)
+        }}
+        style={{ listStyle: 'none' }}
+      >
+        {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  )
+}
+
+No description
+
+```graphql
+enum WorkOrderStateEnum {
+  DONE
+  FAILED
+  REFINING_COMPLETE
+  REFINING_STARTED
+  UNKNOWN
+}
+```
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderStateEnum.<b>DONE</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderStateEnum.<b>FAILED</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderStateEnum.<b>REFINING_COMPLETE</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderStateEnum.<b>REFINING_STARTED</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>WorkOrderStateEnum.<b>UNKNOWN</b></code>](#)
+
+### Member Of
+
+[`OtherOrder`](/api/types/objects/other-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SalvageOrder`](/api/types/objects/salvage-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipMiningOrder`](/api/types/objects/ship-mining-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleMiningOrder`](/api/types/objects/vehicle-mining-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`WorkOrderInterface`](/api/types/interfaces/work-order-interface.mdx) <Badge class="badge badge--secondary badge--relation" text="interface"/>

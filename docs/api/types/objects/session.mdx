@@ -1,0 +1,141 @@
+---
+id: session
+title: Session
+---
+
+export const Bullet = () => (
+  <>
+    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
+      &nbsp;●&nbsp;
+    </span>
+  </>
+)
+
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
+      target="_blank"
+      href={props.url}
+      title={'Specified by ' + props.url}
+    >
+      ⎘
+    </a>
+  </>
+)
+
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+)
+
+import { useState } from 'react'
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen)
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
+    >
+      <summary
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen((open) => !open)
+        }}
+        style={{ listStyle: 'none' }}
+      >
+        {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  )
+}
+
+No description
+
+```graphql
+type Session {
+  activeMemberIds: [String!]
+  activeMembers(nextToken: String): PaginatedSessionUsers
+  createdAt: Timestamp!
+  finishedAt: Timestamp
+  joinId: ID!
+  mentionedUsers: [PendingUser!]!
+  name: String
+  note: String
+  onTheList: Boolean
+  owner: User
+  ownerId: ID!
+  scouting(nextToken: String): PaginatedScoutingFinds
+  sessionId: ID!
+  sessionSettings: SessionSettings!
+  state: SessionStateEnum!
+  summary: SessionSummary
+  updatedAt: Timestamp!
+  version: String
+  workOrders(nextToken: String): PaginatedWorkOrders
+}
+```
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>activeMemberIds</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>activeMembers</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>PaginatedSessionUsers</b></code>](/api/types/objects/paginated-session-users.mdx) <Badge class="badge badge--secondary " text="object"/>
+
+##### [<code style={{ fontWeight: 'normal' }}>Session.activeMembers.<b>nextToken</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>createdAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>finishedAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>joinId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>mentionedUsers</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[PendingUser!]!</b></code>](/api/types/objects/pending-user.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>name</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>note</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>onTheList</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>owner</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>User</b></code>](/api/types/objects/user.mdx) <Badge class="badge badge--secondary " text="object"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>ownerId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>scouting</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>PaginatedScoutingFinds</b></code>](/api/types/objects/paginated-scouting-finds.mdx) <Badge class="badge badge--secondary " text="object"/>
+
+##### [<code style={{ fontWeight: 'normal' }}>Session.scouting.<b>nextToken</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>sessionId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>sessionSettings</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionSettings!</b></code>](/api/types/objects/session-settings.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>state</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionStateEnum!</b></code>](/api/types/enums/session-state-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>summary</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionSummary</b></code>](/api/types/objects/session-summary.mdx) <Badge class="badge badge--secondary " text="object"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>updatedAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>version</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>Session.<b>workOrders</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>PaginatedWorkOrders</b></code>](/api/types/objects/paginated-work-orders.mdx) <Badge class="badge badge--secondary " text="object"/>
+
+##### [<code style={{ fontWeight: 'normal' }}>Session.workOrders.<b>nextToken</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+### Returned By
+
+[`addSessionMentions`](/api/operations/mutations/add-session-mentions.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`createSession`](/api/operations/mutations/create-session.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`removeSessionCrew`](/api/operations/mutations/remove-session-crew.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`removeSessionMentions`](/api/operations/mutations/remove-session-mentions.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`rotateShareId`](/api/operations/mutations/rotate-share-id.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`session`](/api/operations/queries/session.mdx) <Badge class="badge badge--secondary badge--relation" text="query"/><Bullet />[`updatePendingUsers`](/api/operations/mutations/update-pending-users.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateSession`](/api/operations/mutations/update-session.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/>
+
+### Member Of
+
+[`CrewShare`](/api/types/objects/crew-share.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`OtherOrder`](/api/types/objects/other-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`PaginatedSessions`](/api/types/objects/paginated-sessions.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SalvageOrder`](/api/types/objects/salvage-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipMiningOrder`](/api/types/objects/ship-mining-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleMiningOrder`](/api/types/objects/vehicle-mining-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`WorkOrderInterface`](/api/types/interfaces/work-order-interface.mdx) <Badge class="badge badge--secondary badge--relation" text="interface"/>
+
+### Implemented By
+
+[`SessionUpdateUnion`](/api/types/unions/session-update-union.mdx) <Badge class="badge badge--secondary badge--relation" text="union"/>

@@ -1,0 +1,71 @@
+---
+id: boolean
+title: Boolean
+---
+
+export const Bullet = () => (
+  <>
+    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
+      &nbsp;●&nbsp;
+    </span>
+  </>
+)
+
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
+      target="_blank"
+      href={props.url}
+      title={'Specified by ' + props.url}
+    >
+      ⎘
+    </a>
+  </>
+)
+
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+)
+
+import { useState } from 'react'
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen)
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
+    >
+      <summary
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen((open) => !open)
+        }}
+        style={{ listStyle: 'none' }}
+      >
+        {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  )
+}
+
+The `Boolean` scalar type represents `true` or `false`.
+
+```graphql
+scalar Boolean
+```
+
+### Returned By
+
+[`setLookupData`](/api/operations/mutations/set-lookup-data.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/>
+
+### Member Of
+
+[`ActiveMiningLaserLoadout`](/api/types/objects/active-mining-laser-loadout.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ActiveMiningLaserLoadoutInput`](/api/types/inputs/active-mining-laser-loadout-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`blockProspector`](/api/operations/mutations/block-prospector.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`CrewShare`](/api/types/objects/crew-share.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`CrewShareInput`](/api/types/inputs/crew-share-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CrewShareUpdate`](/api/types/inputs/crew-share-update.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`deleteUserProfile`](/api/operations/mutations/delete-user-profile.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`deliverWorkOrder`](/api/operations/mutations/deliver-work-order.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`include`](/api/operations/directives/include.mdx) <Badge class="badge badge--secondary badge--relation" text="directive"/><Bullet />[`joinScoutingFind`](/api/operations/mutations/join-scouting-find.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`markCrewSharePaid`](/api/operations/mutations/mark-crew-share-paid.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`MyDiscordGuild`](/api/types/objects/my-discord-guild.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`OtherOrder`](/api/types/objects/other-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`refreshAvatar`](/api/operations/mutations/refresh-avatar.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`SalvageFind`](/api/types/objects/salvage-find.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SalvageOrder`](/api/types/objects/salvage-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SalvageWreck`](/api/types/objects/salvage-wreck.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SalvageWreckInput`](/api/types/inputs/salvage-wreck-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ScoutingFindInput`](/api/types/inputs/scouting-find-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ScoutingFindInterface`](/api/types/interfaces/scouting-find-interface.mdx) <Badge class="badge badge--secondary badge--relation" text="interface"/><Bullet />[`Session`](/api/types/objects/session.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SessionSettings`](/api/types/objects/session-settings.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SessionSettingsInput`](/api/types/inputs/session-settings-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`SessionShare`](/api/types/objects/session-share.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SessionSummary`](/api/types/objects/session-summary.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SessionSummaryWorkOrder`](/api/types/objects/session-summary-work-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SessionUser`](/api/types/objects/session-user.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SessionUserInput`](/api/types/inputs/session-user-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ShipClusterFind`](/api/types/objects/ship-cluster-find.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipMiningOrder`](/api/types/objects/ship-mining-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`skip`](/api/operations/directives/skip.mdx) <Badge class="badge badge--secondary badge--relation" text="directive"/><Bullet />[`userAPIKey`](/api/operations/mutations/user-apikey.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`UserProfile`](/api/types/objects/user-profile.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`UserProfileInput`](/api/types/inputs/user-profile-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`VehicleClusterFind`](/api/types/objects/vehicle-cluster-find.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleMiningOrder`](/api/types/objects/vehicle-mining-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`WorkOrderDefaults`](/api/types/objects/work-order-defaults.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`WorkOrderDefaultsInput`](/api/types/inputs/work-order-defaults-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`WorkOrderInput`](/api/types/inputs/work-order-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`WorkOrderInterface`](/api/types/interfaces/work-order-interface.mdx) <Badge class="badge badge--secondary badge--relation" text="interface"/>

@@ -1,0 +1,148 @@
+---
+id: mining-module-enum
+title: MiningModuleEnum
+---
+
+export const Bullet = () => (
+  <>
+    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
+      &nbsp;●&nbsp;
+    </span>
+  </>
+)
+
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
+      target="_blank"
+      href={props.url}
+      title={'Specified by ' + props.url}
+    >
+      ⎘
+    </a>
+  </>
+)
+
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+)
+
+import { useState } from 'react'
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen)
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
+    >
+      <summary
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen((open) => !open)
+        }}
+        style={{ listStyle: 'none' }}
+      >
+        {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  )
+}
+
+No description
+
+```graphql
+enum MiningModuleEnum {
+  Brandt
+  FLTR
+  FLTRL
+  FLTRXL
+  Focus
+  FocusII
+  FocusIII
+  Forel
+  Lifeline
+  Optimum
+  Rieger
+  RiegerC2
+  RiegerC3
+  Rime
+  Stampede
+  Surge
+  Torpid
+  Torrent
+  TorrentII
+  TorrentIII
+  Vaux
+  VauxC2
+  VauxC3
+  XTR
+  XTRL
+  XTRXL
+}
+```
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>Brandt</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>FLTR</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>FLTRL</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>FLTRXL</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>Focus</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>FocusII</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>FocusIII</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>Forel</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>Lifeline</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>Optimum</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>Rieger</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>RiegerC2</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>RiegerC3</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>Rime</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>Stampede</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>Surge</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>Torpid</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>Torrent</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>TorrentII</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>TorrentIII</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>Vaux</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>VauxC2</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>VauxC3</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>XTR</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>XTRL</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>MiningModuleEnum.<b>XTRXL</b></code>](#)
+
+### Member Of
+
+[`ActiveMiningLaserLoadout`](/api/types/objects/active-mining-laser-loadout.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ActiveMiningLaserLoadoutInput`](/api/types/inputs/active-mining-laser-loadout-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`MiningLoadout`](/api/types/objects/mining-loadout.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`MiningLoadoutInput`](/api/types/inputs/mining-loadout-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/>

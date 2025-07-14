@@ -1,0 +1,79 @@
+---
+id: rock-state-enum
+title: RockStateEnum
+---
+
+export const Bullet = () => (
+  <>
+    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
+      &nbsp;●&nbsp;
+    </span>
+  </>
+)
+
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
+      target="_blank"
+      href={props.url}
+      title={'Specified by ' + props.url}
+    >
+      ⎘
+    </a>
+  </>
+)
+
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+)
+
+import { useState } from 'react'
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen)
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
+    >
+      <summary
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen((open) => !open)
+        }}
+        style={{ listStyle: 'none' }}
+      >
+        {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  )
+}
+
+No description
+
+```graphql
+enum RockStateEnum {
+  DEPLETED
+  IGNORE
+  READY
+}
+```
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>RockStateEnum.<b>DEPLETED</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RockStateEnum.<b>IGNORE</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RockStateEnum.<b>READY</b></code>](#)
+
+### Member Of
+
+[`ShipRock`](/api/types/objects/ship-rock.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipRockInput`](/api/types/inputs/ship-rock-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/>
