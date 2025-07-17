@@ -99,7 +99,7 @@ const config: Config = {
         blog: {
           showReadingTime: true,
           blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',          
+          blogSidebarCount: 'ALL',
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
@@ -120,7 +120,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-        algolia: {
+    algolia: {
       // The application ID provided by Algolia
       appId: 'OYB5FRZZH6',
 
@@ -131,7 +131,7 @@ const config: Config = {
 
       // Optional: see doc section below
       contextualSearch: true,
-        },
+    },
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: true,
