@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "@regolithco/docs-site",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -17,8 +17,8 @@
   "dependencies": {
     "@docusaurus/core": "3.8.1",
     "@docusaurus/preset-classic": "3.8.1",
-    "@graphql-markdown/docusaurus": "^1.30.1",
     "@docusaurus/theme-search-algolia": "^3.8.1",
+    "@graphql-markdown/docusaurus": "^1.30.1",
     "@mdx-js/react": "^3.0.0",
     "@regolithco/common": "^1.4.1",
     "clsx": "^2.0.0",
@@ -58,7 +58,7 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=22.0"
   },
   "packageManager": "yarn@3.6.3+sha256.08ead1821a257416e6f217e89365425bf4b6d2430c3279318bedcec1a245fff5"
 }
