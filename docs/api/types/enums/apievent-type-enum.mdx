@@ -3,60 +3,44 @@ id: apievent-type-enum
 title: APIEventTypeEnum
 ---
 
-export const Bullet = () => (
-  <>
-    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
-      &nbsp;●&nbsp;
-    </span>
-  </>
-)
 
-export const SpecifiedBy = (props) => (
-  <>
-    Specification
-    <a
-      className="link"
-      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
-      target="_blank"
-      href={props.url}
-      title={'Specified by ' + props.url}
-    >
-      ⎘
-    </a>
-  </>
-)
 
-export const Badge = (props) => (
-  <>
-    <span className={props.class}>{props.text}</span>
-  </>
-)
 
-import { useState } from 'react'
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
 
 export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
-  const [open, setOpen] = useState(startOpen)
+  const [open, setOpen] = useState(startOpen);
   return (
-    <details
-      {...(open ? { open: true } : {})}
-      className="details"
-      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
-    >
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
       <summary
         onClick={(e) => {
-          e.preventDefault()
-          setOpen((open) => !open)
+          e.preventDefault();
+          setOpen((open) => !open);
         }}
-        style={{ listStyle: 'none' }}
+        style={{ listStyle:'none' }}
       >
-        {open ? dataOpen : dataClose}
+      {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
-  )
-}
+  );
+};
+
+
+
+
+
+
+
 
 No description
+
 
 ```graphql
 enum APIEventTypeEnum {
@@ -77,36 +61,71 @@ enum APIEventTypeEnum {
 }
 ```
 
+
+
+
 ### Values
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>CREATED</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>CREATED</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>CS_CREATED</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>CS_DELETED</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>CS_UPDATED</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>CS&#x005F;CREATED</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>DELETED</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>JOINED</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>LEFT</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>CS&#x005F;DELETED</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>MJ_CREATED</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>MJ_DELETED</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>MJ_UPDATED</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>CS&#x005F;UPDATED</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>RC_CREATED</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>RC_DELETED</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>RC_UPDATED</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>DELETED</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>UPDATED</b></code>](#)
+
+
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>JOINED</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>LEFT</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>MJ&#x005F;CREATED</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>MJ&#x005F;DELETED</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>MJ&#x005F;UPDATED</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>RC&#x005F;CREATED</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>RC&#x005F;DELETED</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>RC&#x005F;UPDATED</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>APIEventTypeEnum.<b>UPDATED</b></code>](#)  
+
+
+
+
+
+
 
 ### Member Of
 
-[`APIEvent`](/api/types/objects/apievent.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/>
+[`APIEvent`](/api/types/objects/apievent.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

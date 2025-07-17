@@ -3,60 +3,44 @@ id: user-profile
 title: UserProfile
 ---
 
-export const Bullet = () => (
-  <>
-    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
-      &nbsp;●&nbsp;
-    </span>
-  </>
-)
 
-export const SpecifiedBy = (props) => (
-  <>
-    Specification
-    <a
-      className="link"
-      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
-      target="_blank"
-      href={props.url}
-      title={'Specified by ' + props.url}
-    >
-      ⎘
-    </a>
-  </>
-)
 
-export const Badge = (props) => (
-  <>
-    <span className={props.class}>{props.text}</span>
-  </>
-)
 
-import { useState } from 'react'
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
 
 export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
-  const [open, setOpen] = useState(startOpen)
+  const [open, setOpen] = useState(startOpen);
   return (
-    <details
-      {...(open ? { open: true } : {})}
-      className="details"
-      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
-    >
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
       <summary
         onClick={(e) => {
-          e.preventDefault()
-          setOpen((open) => !open)
+          e.preventDefault();
+          setOpen((open) => !open);
         }}
-        style={{ listStyle: 'none' }}
+        style={{ listStyle:'none' }}
       >
-        {open ? dataOpen : dataClose}
+      {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
-  )
-}
+  );
+};
+
+
+
+
+
+
+
 
 No description
+
 
 ```graphql
 type UserProfile implements UserInterface {
@@ -64,14 +48,20 @@ type UserProfile implements UserInterface {
   avatarUrl: String
   createdAt: Timestamp!
   deliveryShipCode: String
-  discordGuilds(refresh: Boolean): [MyDiscordGuild!]!
+  discordGuilds(
+    refresh: Boolean
+  ): [MyDiscordGuild!]!
   friends: [String!]!
   isSurveyor: Boolean
   isSurveyorBanned: Boolean
-  joinedSessions(nextToken: String): PaginatedSessions
+  joinedSessions(
+    nextToken: String
+  ): PaginatedSessions
   lastActive: Timestamp!
   loadouts: [MiningLoadout!]!
-  mySessions(nextToken: String): PaginatedSessions
+  mySessions(
+    nextToken: String
+  ): PaginatedSessions
   plan: UserPlanEnum!
   scName: String!
   sessionSettings: SessionSettings!
@@ -84,76 +74,140 @@ type UserProfile implements UserInterface {
   userId: ID!
   userSettings: JSONObject
   verifyCode: String
-  workOrders(nextToken: String, stateFilter: WorkOrderStateEnum): PaginatedWorkOrders
+  workOrders(
+    nextToken: String
+    stateFilter: WorkOrderStateEnum
+  ): PaginatedWorkOrders
 }
 ```
 
+
+
+
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>apiKey</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>apiKey</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>avatarUrl</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>createdAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>deliveryShipCode</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>avatarUrl</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>discordGuilds</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[MyDiscordGuild!]!</b></code>](/api/types/objects/my-discord-guild.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/>
 
-##### [<code style={{ fontWeight: 'normal' }}>UserProfile.discordGuilds.<b>refresh</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>friends</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]!</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>createdAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>isSurveyor</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>isSurveyorBanned</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>joinedSessions</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>PaginatedSessions</b></code>](/api/types/objects/paginated-sessions.mdx) <Badge class="badge badge--secondary " text="object"/>
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>deliveryShipCode</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-##### [<code style={{ fontWeight: 'normal' }}>UserProfile.joinedSessions.<b>nextToken</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>lastActive</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>loadouts</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[MiningLoadout!]!</b></code>](/api/types/objects/mining-loadout.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/>
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>discordGuilds</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[MyDiscordGuild!]!</b></code>](/api/types/objects/my-discord-guild.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>mySessions</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>PaginatedSessions</b></code>](/api/types/objects/paginated-sessions.mdx) <Badge class="badge badge--secondary " text="object"/>
+##### [<code style={{ fontWeight: 'normal' }}>UserProfile.discordGuilds.<b>refresh</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-##### [<code style={{ fontWeight: 'normal' }}>UserProfile.mySessions.<b>nextToken</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>plan</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>UserPlanEnum!</b></code>](/api/types/enums/user-plan-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>scName</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>friends</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]!</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>sessionSettings</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionSettings!</b></code>](/api/types/objects/session-settings.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>sessionShipCode</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>state</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>UserStateEnum!</b></code>](/api/types/enums/user-state-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/>
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>isSurveyor</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>surveyorGuild</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DiscordGuild</b></code>](/api/types/objects/discord-guild.mdx) <Badge class="badge badge--secondary " text="object"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>surveyorName</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>surveyorScore</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>isSurveyorBanned</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>updatedAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>userId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>userSettings</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSONObject</b></code>](/api/types/scalars/jsonobject.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>joinedSessions</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>PaginatedSessions</b></code>](/api/types/objects/paginated-sessions.mdx) <Badge class="badge badge--secondary " text="object"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>verifyCode</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+##### [<code style={{ fontWeight: 'normal' }}>UserProfile.joinedSessions.<b>nextToken</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>workOrders</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>PaginatedWorkOrders</b></code>](/api/types/objects/paginated-work-orders.mdx) <Badge class="badge badge--secondary " text="object"/>
 
-##### [<code style={{ fontWeight: 'normal' }}>UserProfile.workOrders.<b>nextToken</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-##### [<code style={{ fontWeight: 'normal' }}>UserProfile.workOrders.<b>stateFilter</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>WorkOrderStateEnum</b></code>](/api/types/enums/work-order-state-enum.mdx) <Badge class="badge badge--secondary " text="enum"/>
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>lastActive</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>loadouts</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[MiningLoadout!]!</b></code>](/api/types/objects/mining-loadout.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>mySessions</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>PaginatedSessions</b></code>](/api/types/objects/paginated-sessions.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+##### [<code style={{ fontWeight: 'normal' }}>UserProfile.mySessions.<b>nextToken</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>plan</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>UserPlanEnum!</b></code>](/api/types/enums/user-plan-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>scName</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>sessionSettings</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionSettings!</b></code>](/api/types/objects/session-settings.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>sessionShipCode</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>state</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>UserStateEnum!</b></code>](/api/types/enums/user-state-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>surveyorGuild</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DiscordGuild</b></code>](/api/types/objects/discord-guild.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>surveyorName</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>surveyorScore</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>updatedAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>userId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>userSettings</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSONObject</b></code>](/api/types/scalars/jsonobject.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>verifyCode</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserProfile.<b>workOrders</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>PaginatedWorkOrders</b></code>](/api/types/objects/paginated-work-orders.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+##### [<code style={{ fontWeight: 'normal' }}>UserProfile.workOrders.<b>nextToken</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+##### [<code style={{ fontWeight: 'normal' }}>UserProfile.workOrders.<b>stateFilter</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>WorkOrderStateEnum</b></code>](/api/types/enums/work-order-state-enum.mdx) <Badge class="badge badge--secondary " text="enum"/> 
+
+
 
 ### Interfaces
 
-#### [<code style={{ fontWeight: 'normal' }}><b>UserInterface</b></code>](/api/types/interfaces/user-interface.mdx) <Badge class="badge badge--secondary " text="interface"/>
+#### [<code style={{ fontWeight: 'normal' }}><b>UserInterface</b></code>](/api/types/interfaces/user-interface.mdx) <Badge class="badge badge--secondary " text="interface"/> 
+
+
+
+
+
+
 
 ### Returned By
 
-[`addFriends`](/api/operations/mutations/add-friends.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`blockProspector`](/api/operations/mutations/block-prospector.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`mergeAccount`](/api/operations/mutations/merge-account.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`mergeAccountAdmin`](/api/operations/mutations/merge-account-admin.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`profile`](/api/operations/queries/profile.mdx) <Badge class="badge badge--secondary badge--relation" text="query"/><Bullet />[`refreshAvatar`](/api/operations/mutations/refresh-avatar.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`removeFriends`](/api/operations/mutations/remove-friends.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`setUserPlan`](/api/operations/mutations/set-user-plan.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateUserProfile`](/api/operations/mutations/update-user-profile.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`userAPIKey`](/api/operations/mutations/user-apikey.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`verifyUserProfile`](/api/operations/mutations/verify-user-profile.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/>
+[`addFriends`](/api/operations/mutations/add-friends.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`blockProspector`](#)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`mergeAccount`](#)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`mergeAccountAdmin`](/api/operations/mutations/merge-account-admin.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`profile`](/api/operations/queries/profile.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/><Bullet />[`refreshAvatar`](/api/operations/mutations/refresh-avatar.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`removeFriends`](/api/operations/mutations/remove-friends.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`setUserPlan`](#)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateUserProfile`](/api/operations/mutations/update-user-profile.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`userAPIKey`](/api/operations/mutations/user-apikey.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`verifyUserProfile`](/api/operations/mutations/verify-user-profile.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>

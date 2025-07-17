@@ -3,60 +3,45 @@ id: create-session
 title: createSession
 ---
 
-export const Bullet = () => (
-  <>
-    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
-      &nbsp;●&nbsp;
-    </span>
-  </>
-)
 
-export const SpecifiedBy = (props) => (
-  <>
-    Specification
-    <a
-      className="link"
-      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
-      target="_blank"
-      href={props.url}
-      title={'Specified by ' + props.url}
-    >
-      ⎘
-    </a>
-  </>
-)
 
-export const Badge = (props) => (
-  <>
-    <span className={props.class}>{props.text}</span>
-  </>
-)
 
-import { useState } from 'react'
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
 
 export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
-  const [open, setOpen] = useState(startOpen)
+  const [open, setOpen] = useState(startOpen);
   return (
-    <details
-      {...(open ? { open: true } : {})}
-      className="details"
-      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
-    >
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
       <summary
         onClick={(e) => {
-          e.preventDefault()
-          setOpen((open) => !open)
+          e.preventDefault();
+          setOpen((open) => !open);
         }}
-        style={{ listStyle: 'none' }}
+        style={{ listStyle:'none' }}
       >
-        {open ? dataOpen : dataClose}
+      {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
-  )
-}
+  );
+};
 
-No description
+
+
+
+
+
+
+
+Create a new session with the provided details and defaults.
+This is the public resolver for creating a session.
+
 
 ```graphql
 createSession(
@@ -70,21 +55,38 @@ createSession(
 ): Session
 ```
 
+
+
+
 ### Arguments
 
-#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>crewSharesDefaults</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[CrewShareTemplateInput!]</b></code>](/api/types/inputs/crew-share-template-input.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="input"/>
+#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>crewSharesDefaults</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[CrewShareTemplateInput!]</b></code>](/api/types/inputs/crew-share-template-input.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="input"/> 
+(Optional) Default crew share templates.
 
-#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>salvageOreDefaults</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[SalvageOreEnum!]</b></code>](/api/types/enums/salvage-ore-enum.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="enum"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>session</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionInput!</b></code>](/api/types/inputs/session-input.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="input"/>
+#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>salvageOreDefaults</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[SalvageOreEnum!]</b></code>](/api/types/enums/salvage-ore-enum.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="enum"/> 
+(Optional) Default salvage ore types.
 
-#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>sessionSettings</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionSettingsInput</b></code>](/api/types/inputs/session-settings-input.mdx) <Badge class="badge badge--secondary " text="input"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>shipOreDefaults</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[ShipOreEnum!]</b></code>](/api/types/enums/ship-ore-enum.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="enum"/>
+#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>session</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionInput!</b></code>](/api/types/inputs/session-input.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="input"/> 
+The session details.
 
-#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>vehicleOreDefaults</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[VehicleOreEnum!]</b></code>](/api/types/enums/vehicle-ore-enum.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="enum"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>workOrderDefaults</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>WorkOrderDefaultsInput</b></code>](/api/types/inputs/work-order-defaults-input.mdx) <Badge class="badge badge--secondary " text="input"/>
+#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>sessionSettings</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionSettingsInput</b></code>](/api/types/inputs/session-settings-input.mdx) <Badge class="badge badge--secondary " text="input"/> 
+(Optional) Default session settings.
+
+
+#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>shipOreDefaults</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[ShipOreEnum!]</b></code>](/api/types/enums/ship-ore-enum.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="enum"/> 
+(Optional) Default ship ore types.
+
+
+#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>vehicleOreDefaults</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[VehicleOreEnum!]</b></code>](/api/types/enums/vehicle-ore-enum.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="enum"/> 
+(Optional) Default vehicle ore types.
+
+
+#### [<code style={{ fontWeight: 'normal' }}>createSession.<b>workOrderDefaults</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>WorkOrderDefaultsInput</b></code>](/api/types/inputs/work-order-defaults-input.mdx) <Badge class="badge badge--secondary " text="input"/> 
+(Optional) Default work order settings.
+
 
 ### Type
 

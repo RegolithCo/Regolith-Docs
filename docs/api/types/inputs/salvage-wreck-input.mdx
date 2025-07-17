@@ -3,60 +3,44 @@ id: salvage-wreck-input
 title: SalvageWreckInput
 ---
 
-export const Bullet = () => (
-  <>
-    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
-      &nbsp;●&nbsp;
-    </span>
-  </>
-)
 
-export const SpecifiedBy = (props) => (
-  <>
-    Specification
-    <a
-      className="link"
-      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
-      target="_blank"
-      href={props.url}
-      title={'Specified by ' + props.url}
-    >
-      ⎘
-    </a>
-  </>
-)
 
-export const Badge = (props) => (
-  <>
-    <span className={props.class}>{props.text}</span>
-  </>
-)
 
-import { useState } from 'react'
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
 
 export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
-  const [open, setOpen] = useState(startOpen)
+  const [open, setOpen] = useState(startOpen);
   return (
-    <details
-      {...(open ? { open: true } : {})}
-      className="details"
-      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
-    >
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
       <summary
         onClick={(e) => {
-          e.preventDefault()
-          setOpen((open) => !open)
+          e.preventDefault();
+          setOpen((open) => !open);
         }}
-        style={{ listStyle: 'none' }}
+        style={{ listStyle:'none' }}
       >
-        {open ? dataOpen : dataClose}
+      {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
-  )
-}
+  );
+};
+
+
+
+
+
+
+
 
 No description
+
 
 ```graphql
 input SalvageWreckInput {
@@ -68,18 +52,35 @@ input SalvageWreckInput {
 }
 ```
 
+
+
+
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>SalvageWreckInput.<b>isShip</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean!</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>SalvageWreckInput.<b>isShip</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean!</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>SalvageWreckInput.<b>salvageOres</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[SalvageWreckOreInput!]!</b></code>](/api/types/inputs/salvage-wreck-ore-input.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="input"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SalvageWreckInput.<b>sellableAUEC</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SalvageWreckInput.<b>shipCode</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>SalvageWreckInput.<b>salvageOres</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[SalvageWreckOreInput!]!</b></code>](/api/types/inputs/salvage-wreck-ore-input.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="input"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>SalvageWreckInput.<b>state</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>WreckStateEnum!</b></code>](/api/types/enums/wreck-state-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/>
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SalvageWreckInput.<b>sellableAUEC</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SalvageWreckInput.<b>shipCode</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SalvageWreckInput.<b>state</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>WreckStateEnum!</b></code>](/api/types/enums/wreck-state-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/> 
+
+
+
+
+
+
 
 ### Member Of
 
-[`addScoutingFind`](/api/operations/mutations/add-scouting-find.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateScoutingFind`](/api/operations/mutations/update-scouting-find.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/>
+[`addScoutingFind`](/api/operations/mutations/add-scouting-find.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateScoutingFind`](/api/operations/mutations/update-scouting-find.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>

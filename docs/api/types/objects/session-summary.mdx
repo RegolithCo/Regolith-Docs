@@ -3,60 +3,44 @@ id: session-summary
 title: SessionSummary
 ---
 
-export const Bullet = () => (
-  <>
-    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
-      &nbsp;●&nbsp;
-    </span>
-  </>
-)
 
-export const SpecifiedBy = (props) => (
-  <>
-    Specification
-    <a
-      className="link"
-      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
-      target="_blank"
-      href={props.url}
-      title={'Specified by ' + props.url}
-    >
-      ⎘
-    </a>
-  </>
-)
 
-export const Badge = (props) => (
-  <>
-    <span className={props.class}>{props.text}</span>
-  </>
-)
 
-import { useState } from 'react'
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
 
 export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
-  const [open, setOpen] = useState(startOpen)
+  const [open, setOpen] = useState(startOpen);
   return (
-    <details
-      {...(open ? { open: true } : {})}
-      className="details"
-      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
-    >
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
       <summary
         onClick={(e) => {
-          e.preventDefault()
-          setOpen((open) => !open)
+          e.preventDefault();
+          setOpen((open) => !open);
         }}
-        style={{ listStyle: 'none' }}
+        style={{ listStyle:'none' }}
       >
-        {open ? dataOpen : dataClose}
+      {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
-  )
-}
+  );
+};
+
+
+
+
+
+
+
 
 No description
+
 
 ```graphql
 type SessionSummary {
@@ -74,30 +58,59 @@ type SessionSummary {
 }
 ```
 
+
+
+
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>aUEC</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>aUEC</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>activeMembers</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>allPaid</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>collectedSCU</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float</b></code>](/api/types/scalars/float.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>activeMembers</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>lastJobDone</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>refineries</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[RefineryEnum!]!</b></code>](/api/types/enums/refinery-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>scoutingFindsByType</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionSummaryTotals</b></code>](/api/types/objects/session-summary-totals.mdx) <Badge class="badge badge--secondary " text="object"/>
+#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>allPaid</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>totalMembers</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>workOrderSummaries</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[SessionSummaryWorkOrder!]!</b></code>](/api/types/objects/session-summary-work-order.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>workOrdersByType</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionSummaryTotals</b></code>](/api/types/objects/session-summary-totals.mdx) <Badge class="badge badge--secondary " text="object"/>
+#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>collectedSCU</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float</b></code>](/api/types/scalars/float.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>yieldSCU</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float</b></code>](/api/types/scalars/float.mdx) <Badge class="badge badge--secondary " text="scalar"/>
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>lastJobDone</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>refineries</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[RefineryEnum!]!</b></code>](/api/types/enums/refinery-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>scoutingFindsByType</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionSummaryTotals</b></code>](/api/types/objects/session-summary-totals.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>totalMembers</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>workOrderSummaries</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[SessionSummaryWorkOrder!]!</b></code>](/api/types/objects/session-summary-work-order.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>workOrdersByType</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>SessionSummaryTotals</b></code>](/api/types/objects/session-summary-totals.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>yieldSCU</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float</b></code>](/api/types/scalars/float.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+
+
+
 
 ### Member Of
 
-[`Session`](/api/types/objects/session.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/>
+[`Session`](/api/types/objects/session.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

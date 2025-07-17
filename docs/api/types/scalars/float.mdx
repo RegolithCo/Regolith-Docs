@@ -3,65 +3,56 @@ id: float
 title: Float
 ---
 
-export const Bullet = () => (
-  <>
-    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
-      &nbsp;●&nbsp;
-    </span>
-  </>
-)
 
-export const SpecifiedBy = (props) => (
-  <>
-    Specification
-    <a
-      className="link"
-      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
-      target="_blank"
-      href={props.url}
-      title={'Specified by ' + props.url}
-    >
-      ⎘
-    </a>
-  </>
-)
 
-export const Badge = (props) => (
-  <>
-    <span className={props.class}>{props.text}</span>
-  </>
-)
 
-import { useState } from 'react'
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
 
 export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
-  const [open, setOpen] = useState(startOpen)
+  const [open, setOpen] = useState(startOpen);
   return (
-    <details
-      {...(open ? { open: true } : {})}
-      className="details"
-      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
-    >
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
       <summary
         onClick={(e) => {
-          e.preventDefault()
-          setOpen((open) => !open)
+          e.preventDefault();
+          setOpen((open) => !open);
         }}
-        style={{ listStyle: 'none' }}
+        style={{ listStyle:'none' }}
       >
-        {open ? dataOpen : dataClose}
+      {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
-  )
-}
+  );
+};
 
-The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
+
+
+
+
+
+
+
+The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE&#x005F;floating&#x005F;point).
+
 
 ```graphql
 scalar Float
 ```
 
+
+
+
+
+
+
+
 ### Member Of
 
-[`CrewShare`](/api/types/objects/crew-share.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`CrewShareInput`](/api/types/inputs/crew-share-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CrewShareTemplate`](/api/types/objects/crew-share-template.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`CrewShareTemplateInput`](/api/types/inputs/crew-share-template-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CrewShareUpdate`](/api/types/inputs/crew-share-update.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`SalvageFind`](/api/types/objects/salvage-find.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ScoutingFindInterface`](/api/types/interfaces/scouting-find-interface.mdx) <Badge class="badge badge--secondary badge--relation" text="interface"/><Bullet />[`SessionSummary`](/api/types/objects/session-summary.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipClusterFind`](/api/types/objects/ship-cluster-find.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipRock`](/api/types/objects/ship-rock.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipRockCapture`](/api/types/objects/ship-rock-capture.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipRockInput`](/api/types/inputs/ship-rock-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ShipRockOre`](/api/types/objects/ship-rock-ore.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipRockOreInput`](/api/types/inputs/ship-rock-ore-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`VehicleClusterFind`](/api/types/objects/vehicle-cluster-find.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleRock`](/api/types/objects/vehicle-rock.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleRockInput`](/api/types/inputs/vehicle-rock-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`VehicleRockOre`](/api/types/objects/vehicle-rock-ore.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleRockOreInput`](/api/types/inputs/vehicle-rock-ore-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/>
+[`CrewShare`](/api/types/objects/crew-share.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`CrewShareInput`](/api/types/inputs/crew-share-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CrewShareTemplate`](/api/types/objects/crew-share-template.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`CrewShareTemplateInput`](/api/types/inputs/crew-share-template-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CrewShareUpdate`](/api/types/inputs/crew-share-update.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`SalvageFind`](/api/types/objects/salvage-find.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ScoutingFindInterface`](/api/types/interfaces/scouting-find-interface.mdx)  <Badge class="badge badge--secondary badge--relation" text="interface"/><Bullet />[`SessionSummary`](/api/types/objects/session-summary.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipClusterFind`](/api/types/objects/ship-cluster-find.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipRock`](/api/types/objects/ship-rock.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipRockCapture`](/api/types/objects/ship-rock-capture.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipRockInput`](/api/types/inputs/ship-rock-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ShipRockOre`](/api/types/objects/ship-rock-ore.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipRockOreInput`](/api/types/inputs/ship-rock-ore-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`VehicleClusterFind`](/api/types/objects/vehicle-cluster-find.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleRock`](/api/types/objects/vehicle-rock.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleRockInput`](/api/types/inputs/vehicle-rock-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`VehicleRockOre`](/api/types/objects/vehicle-rock-ore.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleRockOreInput`](/api/types/inputs/vehicle-rock-ore-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

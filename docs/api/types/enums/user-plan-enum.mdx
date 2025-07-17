@@ -3,60 +3,44 @@ id: user-plan-enum
 title: UserPlanEnum
 ---
 
-export const Bullet = () => (
-  <>
-    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
-      &nbsp;●&nbsp;
-    </span>
-  </>
-)
 
-export const SpecifiedBy = (props) => (
-  <>
-    Specification
-    <a
-      className="link"
-      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
-      target="_blank"
-      href={props.url}
-      title={'Specified by ' + props.url}
-    >
-      ⎘
-    </a>
-  </>
-)
 
-export const Badge = (props) => (
-  <>
-    <span className={props.class}>{props.text}</span>
-  </>
-)
 
-import { useState } from 'react'
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
 
 export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
-  const [open, setOpen] = useState(startOpen)
+  const [open, setOpen] = useState(startOpen);
   return (
-    <details
-      {...(open ? { open: true } : {})}
-      className="details"
-      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
-    >
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
       <summary
         onClick={(e) => {
-          e.preventDefault()
-          setOpen((open) => !open)
+          e.preventDefault();
+          setOpen((open) => !open);
         }}
-        style={{ listStyle: 'none' }}
+        style={{ listStyle:'none' }}
       >
-        {open ? dataOpen : dataClose}
+      {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
-  )
-}
+  );
+};
+
+
+
+
+
+
+
 
 No description
+
 
 ```graphql
 enum UserPlanEnum {
@@ -67,16 +51,31 @@ enum UserPlanEnum {
 }
 ```
 
+
+
+
 ### Values
 
-#### [<code style={{ fontWeight: 'normal' }}>UserPlanEnum.<b>ADMIN</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>UserPlanEnum.<b>ADMIN</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>UserPlanEnum.<b>ETERNAL_GRATITUDE</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>UserPlanEnum.<b>FREE</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>UserPlanEnum.<b>GRIZZLED_PROSPECTOR</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>UserPlanEnum.<b>ETERNAL&#x005F;GRATITUDE</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserPlanEnum.<b>FREE</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UserPlanEnum.<b>GRIZZLED&#x005F;PROSPECTOR</b></code>](#)  
+
+
+
+
+
+
 
 ### Member Of
 
-[`setUserPlan`](/api/operations/mutations/set-user-plan.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`UserProfile`](/api/types/objects/user-profile.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/>
+[`setUserPlan`](#)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`UserProfile`](/api/types/objects/user-profile.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

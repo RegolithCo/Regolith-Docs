@@ -3,60 +3,44 @@ id: ship-ore-enum
 title: ShipOreEnum
 ---
 
-export const Bullet = () => (
-  <>
-    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
-      &nbsp;●&nbsp;
-    </span>
-  </>
-)
 
-export const SpecifiedBy = (props) => (
-  <>
-    Specification
-    <a
-      className="link"
-      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
-      target="_blank"
-      href={props.url}
-      title={'Specified by ' + props.url}
-    >
-      ⎘
-    </a>
-  </>
-)
 
-export const Badge = (props) => (
-  <>
-    <span className={props.class}>{props.text}</span>
-  </>
-)
 
-import { useState } from 'react'
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
 
 export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
-  const [open, setOpen] = useState(startOpen)
+  const [open, setOpen] = useState(startOpen);
   return (
-    <details
-      {...(open ? { open: true } : {})}
-      className="details"
-      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
-    >
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
       <summary
         onClick={(e) => {
-          e.preventDefault()
-          setOpen((open) => !open)
+          e.preventDefault();
+          setOpen((open) => !open);
         }}
-        style={{ listStyle: 'none' }}
+        style={{ listStyle:'none' }}
       >
-        {open ? dataOpen : dataClose}
+      {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
-  )
-}
+  );
+};
+
+
+
+
+
+
+
 
 No description
+
 
 ```graphql
 enum ShipOreEnum {
@@ -86,54 +70,107 @@ enum ShipOreEnum {
 }
 ```
 
+
+
+
 ### Values
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>AGRICIUM</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>AGRICIUM</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>ALUMINUM</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>BERYL</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>BEXALITE</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>ALUMINUM</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>BORASE</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>COPPER</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>CORUNDUM</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>BERYL</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>DIAMOND</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>GOLD</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>HEPHAESTANITE</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>BEXALITE</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>ICE</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>INERTMATERIAL</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>IRON</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>BORASE</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>LARANITE</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>QUANTANIUM</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>QUARTZ</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>COPPER</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>RICCITE</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>SILICON</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>STILERON</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>CORUNDUM</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>TARANITE</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>TIN</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>TITANIUM</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>DIAMOND</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>TUNGSTEN</b></code>](#)
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>GOLD</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>HEPHAESTANITE</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>ICE</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>INERTMATERIAL</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>IRON</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>LARANITE</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>QUANTANIUM</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>QUARTZ</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>RICCITE</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>SILICON</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>STILERON</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>TARANITE</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>TIN</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>TITANIUM</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ShipOreEnum.<b>TUNGSTEN</b></code>](#)  
+
+
+
+
+
+
 
 ### Member Of
 
-[`createSession`](/api/operations/mutations/create-session.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`RefineryRow`](/api/types/objects/refinery-row.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`RefineryRowCapture`](/api/types/objects/refinery-row-capture.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`RefineryRowInput`](/api/types/inputs/refinery-row-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ShipRockOre`](/api/types/objects/ship-rock-ore.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipRockOreInput`](/api/types/inputs/ship-rock-ore-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`updateSession`](/api/operations/mutations/update-session.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateUserProfile`](/api/operations/mutations/update-user-profile.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`WorkOrderDefaults`](/api/types/objects/work-order-defaults.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/>
+[`createSession`](/api/operations/mutations/create-session.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`RefineryRow`](/api/types/objects/refinery-row.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`RefineryRowCapture`](/api/types/objects/refinery-row-capture.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`RefineryRowInput`](/api/types/inputs/refinery-row-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ShipRockOre`](/api/types/objects/ship-rock-ore.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipRockOreInput`](/api/types/inputs/ship-rock-ore-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`updateSession`](/api/operations/mutations/update-session.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateUserProfile`](/api/operations/mutations/update-user-profile.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`WorkOrderDefaults`](/api/types/objects/work-order-defaults.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

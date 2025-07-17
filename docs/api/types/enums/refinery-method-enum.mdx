@@ -3,60 +3,44 @@ id: refinery-method-enum
 title: RefineryMethodEnum
 ---
 
-export const Bullet = () => (
-  <>
-    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
-      &nbsp;●&nbsp;
-    </span>
-  </>
-)
 
-export const SpecifiedBy = (props) => (
-  <>
-    Specification
-    <a
-      className="link"
-      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
-      target="_blank"
-      href={props.url}
-      title={'Specified by ' + props.url}
-    >
-      ⎘
-    </a>
-  </>
-)
 
-export const Badge = (props) => (
-  <>
-    <span className={props.class}>{props.text}</span>
-  </>
-)
 
-import { useState } from 'react'
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
 
 export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
-  const [open, setOpen] = useState(startOpen)
+  const [open, setOpen] = useState(startOpen);
   return (
-    <details
-      {...(open ? { open: true } : {})}
-      className="details"
-      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
-    >
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
       <summary
         onClick={(e) => {
-          e.preventDefault()
-          setOpen((open) => !open)
+          e.preventDefault();
+          setOpen((open) => !open);
         }}
-        style={{ listStyle: 'none' }}
+        style={{ listStyle:'none' }}
       >
-        {open ? dataOpen : dataClose}
+      {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
-  )
-}
+  );
+};
+
+
+
+
+
+
+
 
 No description
+
 
 ```graphql
 enum RefineryMethodEnum {
@@ -72,26 +56,51 @@ enum RefineryMethodEnum {
 }
 ```
 
+
+
+
 ### Values
 
-#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>CORMACK</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>CORMACK</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>DINYX_SOLVENTATION</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>ELECTROSTAROLYSIS</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>FERRON_EXCHANGE</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>DINYX&#x005F;SOLVENTATION</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>GASKIN_PROCESS</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>KAZEN_WINNOWING</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>PYROMETRIC_CHROMALYSIS</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>ELECTROSTAROLYSIS</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>THERMONATIC_DEPOSITION</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>XCR_REACTION</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>FERRON&#x005F;EXCHANGE</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>GASKIN&#x005F;PROCESS</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>KAZEN&#x005F;WINNOWING</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>PYROMETRIC&#x005F;CHROMALYSIS</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>THERMONATIC&#x005F;DEPOSITION</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>RefineryMethodEnum.<b>XCR&#x005F;REACTION</b></code>](#)  
+
+
+
+
+
+
 
 ### Member Of
 
-[`ShipMiningOrder`](/api/types/objects/ship-mining-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipMiningOrderCapture`](/api/types/objects/ship-mining-order-capture.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`WorkOrderDefaults`](/api/types/objects/work-order-defaults.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`WorkOrderDefaultsInput`](/api/types/inputs/work-order-defaults-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`WorkOrderInput`](/api/types/inputs/work-order-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/>
+[`ShipMiningOrder`](/api/types/objects/ship-mining-order.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipMiningOrderCapture`](/api/types/objects/ship-mining-order-capture.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`WorkOrderDefaults`](/api/types/objects/work-order-defaults.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`WorkOrderDefaultsInput`](/api/types/inputs/work-order-defaults-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`WorkOrderInput`](/api/types/inputs/work-order-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

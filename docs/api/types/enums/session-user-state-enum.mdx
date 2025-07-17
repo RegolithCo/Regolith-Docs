@@ -3,60 +3,44 @@ id: session-user-state-enum
 title: SessionUserStateEnum
 ---
 
-export const Bullet = () => (
-  <>
-    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
-      &nbsp;●&nbsp;
-    </span>
-  </>
-)
 
-export const SpecifiedBy = (props) => (
-  <>
-    Specification
-    <a
-      className="link"
-      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
-      target="_blank"
-      href={props.url}
-      title={'Specified by ' + props.url}
-    >
-      ⎘
-    </a>
-  </>
-)
 
-export const Badge = (props) => (
-  <>
-    <span className={props.class}>{props.text}</span>
-  </>
-)
 
-import { useState } from 'react'
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
 
 export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
-  const [open, setOpen] = useState(startOpen)
+  const [open, setOpen] = useState(startOpen);
   return (
-    <details
-      {...(open ? { open: true } : {})}
-      className="details"
-      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
-    >
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
       <summary
         onClick={(e) => {
-          e.preventDefault()
-          setOpen((open) => !open)
+          e.preventDefault();
+          setOpen((open) => !open);
         }}
-        style={{ listStyle: 'none' }}
+        style={{ listStyle:'none' }}
       >
-        {open ? dataOpen : dataClose}
+      {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
-  )
-}
+  );
+};
+
+
+
+
+
+
+
 
 No description
+
 
 ```graphql
 enum SessionUserStateEnum {
@@ -69,20 +53,39 @@ enum SessionUserStateEnum {
 }
 ```
 
+
+
+
 ### Values
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUserStateEnum.<b>AFK</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>SessionUserStateEnum.<b>AFK</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUserStateEnum.<b>ON_SITE</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUserStateEnum.<b>REFINERY_RUN</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUserStateEnum.<b>SCOUTING</b></code>](#)
+#### [<code style={{ fontWeight: 'normal' }}>SessionUserStateEnum.<b>ON&#x005F;SITE</b></code>](#)  
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUserStateEnum.<b>TRAVELLING</b></code>](#)
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUserStateEnum.<b>UNKNOWN</b></code>](#)
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionUserStateEnum.<b>REFINERY&#x005F;RUN</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionUserStateEnum.<b>SCOUTING</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionUserStateEnum.<b>TRAVELLING</b></code>](#)  
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionUserStateEnum.<b>UNKNOWN</b></code>](#)  
+
+
+
+
+
+
 
 ### Member Of
 
-[`SessionUser`](/api/types/objects/session-user.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SessionUserInput`](/api/types/inputs/session-user-input.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`SessionUserUpdate`](/api/types/inputs/session-user-update.mdx) <Badge class="badge badge--secondary badge--relation" text="input"/>
+[`SessionUser`](/api/types/objects/session-user.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SessionUserInput`](/api/types/inputs/session-user-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`SessionUserUpdate`](/api/types/inputs/session-user-update.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

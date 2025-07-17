@@ -3,100 +3,99 @@ id: session-update-union
 title: SessionUpdateUnion
 ---
 
-export const Bullet = () => (
-  <>
-    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
-      &nbsp;●&nbsp;
-    </span>
-  </>
-)
 
-export const SpecifiedBy = (props) => (
-  <>
-    Specification
-    <a
-      className="link"
-      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
-      target="_blank"
-      href={props.url}
-      title={'Specified by ' + props.url}
-    >
-      ⎘
-    </a>
-  </>
-)
 
-export const Badge = (props) => (
-  <>
-    <span className={props.class}>{props.text}</span>
-  </>
-)
 
-import { useState } from 'react'
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
 
 export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
-  const [open, setOpen] = useState(startOpen)
+  const [open, setOpen] = useState(startOpen);
   return (
-    <details
-      {...(open ? { open: true } : {})}
-      className="details"
-      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
-    >
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
       <summary
         onClick={(e) => {
-          e.preventDefault()
-          setOpen((open) => !open)
+          e.preventDefault();
+          setOpen((open) => !open);
         }}
-        style={{ listStyle: 'none' }}
+        style={{ listStyle:'none' }}
       >
-        {open ? dataOpen : dataClose}
+      {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
-  )
-}
+  );
+};
 
-No description
+
+
+
+
+
+
+
+GraphQL Enums for Lookup Types
+
 
 ```graphql
-union SessionUpdateUnion =
-  | CrewShare
-  | OtherOrder
-  | SalvageFind
-  | SalvageOrder
-  | Session
-  | SessionUser
-  | ShipClusterFind
-  | ShipMiningOrder
-  | VehicleClusterFind
-  | VehicleMiningOrder
+union SessionUpdateUnion = CrewShare | OtherOrder | SalvageFind | SalvageOrder | Session | SessionUser | ShipClusterFind | ShipMiningOrder | VehicleClusterFind | VehicleMiningOrder
 ```
+
+
+
 
 ### Possible types
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>CrewShare</b></code>](/api/types/objects/crew-share.mdx) <Badge class="badge badge--secondary " text="object"/>
+#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>CrewShare</b></code>](/api/types/objects/crew-share.mdx) <Badge class="badge badge--secondary " text="object"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>OtherOrder</b></code>](/api/types/objects/other-order.mdx) <Badge class="badge badge--secondary " text="object"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>SalvageFind</b></code>](/api/types/objects/salvage-find.mdx) <Badge class="badge badge--secondary " text="object"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>SalvageOrder</b></code>](/api/types/objects/salvage-order.mdx) <Badge class="badge badge--secondary " text="object"/>
+#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>OtherOrder</b></code>](/api/types/objects/other-order.mdx) <Badge class="badge badge--secondary " text="object"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>Session</b></code>](/api/types/objects/session.mdx) <Badge class="badge badge--secondary " text="object"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>SessionUser</b></code>](/api/types/objects/session-user.mdx) <Badge class="badge badge--secondary " text="object"/>
 
-SessionUser is the type we use to link users who are not the owner to the
+#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>SalvageFind</b></code>](/api/types/objects/salvage-find.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>SalvageOrder</b></code>](/api/types/objects/salvage-order.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>Session</b></code>](/api/types/objects/session.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>SessionUser</b></code>](/api/types/objects/session-user.mdx) <Badge class="badge badge--secondary " text="object"/> 
+SessionUser is the type we use to link users who are not the owner to the 
 session
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>ShipClusterFind</b></code>](/api/types/objects/ship-cluster-find.mdx) <Badge class="badge badge--secondary " text="object"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>ShipMiningOrder</b></code>](/api/types/objects/ship-mining-order.mdx) <Badge class="badge badge--secondary " text="object"/>
+#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>ShipClusterFind</b></code>](/api/types/objects/ship-cluster-find.mdx) <Badge class="badge badge--secondary " text="object"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>VehicleClusterFind</b></code>](/api/types/objects/vehicle-cluster-find.mdx) <Badge class="badge badge--secondary " text="object"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>VehicleMiningOrder</b></code>](/api/types/objects/vehicle-mining-order.mdx) <Badge class="badge badge--secondary " text="object"/>
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>ShipMiningOrder</b></code>](/api/types/objects/ship-mining-order.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>VehicleClusterFind</b></code>](/api/types/objects/vehicle-cluster-find.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>SessionUpdateUnion.<b>VehicleMiningOrder</b></code>](/api/types/objects/vehicle-mining-order.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+
+
+
 
 ### Member Of
 
-[`SessionUpdate`](/api/types/objects/session-update.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/>
+[`SessionUpdate`](/api/types/objects/session-update.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

@@ -1,6 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer'
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
+import { ConfigOptions } from '@graphql-markdown/types'
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -44,7 +45,7 @@ const config: Config = {
           // codeSection: false, // disable code section, same as CLI flag --noCode
           // deprecated: 'group', // group deprecated entities, same as CLI flag --deprecated group
           exampleSection: true, // disable code section, same as CLI flag --noExample
-          hierarchy: 'flat', // disable type API grouping, same as CLI flag --hierarchy entity
+          hierarchy: 'api', // disable type API grouping, same as CLI flag --hierarchy entity
           // parentTypePrefix: false, // disable parent prefix, same as CLI flag --noParentType
           // relatedTypeSection: false, // disable related type sections, same as CLI flag --noRelatedType
           // typeBadges: false, // disable type attribute badges, same as CLI flag --noTypeBadges
@@ -54,7 +55,9 @@ const config: Config = {
         },
         // Optional advanced settings
         pretty: true,
-      },
+        skipDocDirective: ['@admin_only'],
+        // skip: ['admin_only'],
+      } as ConfigOptions,
     ],
   ],
 
@@ -90,6 +93,11 @@ const config: Config = {
   ],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     // Replace with your project's social card
     image: 'img/RockIcon.svg',
     navbar: {

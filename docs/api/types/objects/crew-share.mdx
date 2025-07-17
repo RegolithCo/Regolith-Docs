@@ -3,60 +3,44 @@ id: crew-share
 title: CrewShare
 ---
 
-export const Bullet = () => (
-  <>
-    <span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>
-      &nbsp;●&nbsp;
-    </span>
-  </>
-)
 
-export const SpecifiedBy = (props) => (
-  <>
-    Specification
-    <a
-      className="link"
-      style={{ fontSize: '1.5em', paddingLeft: '4px' }}
-      target="_blank"
-      href={props.url}
-      title={'Specified by ' + props.url}
-    >
-      ⎘
-    </a>
-  </>
-)
 
-export const Badge = (props) => (
-  <>
-    <span className={props.class}>{props.text}</span>
-  </>
-)
 
-import { useState } from 'react'
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
 
 export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
-  const [open, setOpen] = useState(startOpen)
+  const [open, setOpen] = useState(startOpen);
   return (
-    <details
-      {...(open ? { open: true } : {})}
-      className="details"
-      style={{ border: 'none', boxShadow: 'none', background: 'var(--ifm-background-color)' }}
-    >
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
       <summary
         onClick={(e) => {
-          e.preventDefault()
-          setOpen((open) => !open)
+          e.preventDefault();
+          setOpen((open) => !open);
         }}
-        style={{ listStyle: 'none' }}
+        style={{ listStyle:'none' }}
       >
-        {open ? dataOpen : dataClose}
+      {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
-  )
-}
+  );
+};
+
+
+
+
+
+
+
 
 No description
+
 
 ```graphql
 type CrewShare {
@@ -75,43 +59,72 @@ type CrewShare {
 }
 ```
 
+
+
+
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>createdAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>createdAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>note</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>orderId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>payeeScName</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>note</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>payeeUserId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>session</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Session</b></code>](/api/types/objects/session.mdx) <Badge class="badge badge--secondary " text="object"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>sessionId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>orderId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>share</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float!</b></code>](/api/types/scalars/float.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>shareType</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ShareTypeEnum!</b></code>](/api/types/enums/share-type-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/>
 
+#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>payeeScName</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>payeeUserId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>session</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Session</b></code>](/api/types/objects/session.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>sessionId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>share</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float!</b></code>](/api/types/scalars/float.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>shareType</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ShareTypeEnum!</b></code>](/api/types/enums/share-type-enum.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/> 
 We explicitly require the name of the share type to be passed in in case the user is deleted OR
 if they change their SCName. This way we can still track who paid whom.
 
-#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>state</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>updatedAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/>
+#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>state</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
-#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>workOrder</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>WorkOrder</b></code>](/api/types/unions/work-order.mdx) <Badge class="badge badge--secondary " text="union"/>
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>updatedAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](/api/types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CrewShare.<b>workOrder</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>WorkOrder</b></code>](/api/types/unions/work-order.mdx) <Badge class="badge badge--secondary " text="union"/> 
+
+
+
+
+
+
 
 ### Returned By
 
-[`deleteCrewShare`](/api/operations/mutations/delete-crew-share.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`markCrewSharePaid`](/api/operations/mutations/mark-crew-share-paid.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`upsertCrewShare`](/api/operations/mutations/upsert-crew-share.mdx) <Badge class="badge badge--secondary badge--relation" text="mutation"/>
+[`deleteCrewShare`](/api/operations/mutations/delete-crew-share.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`markCrewSharePaid`](/api/operations/mutations/mark-crew-share-paid.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`upsertCrewShare`](/api/operations/mutations/upsert-crew-share.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>
 
 ### Member Of
 
-[`OtherOrder`](/api/types/objects/other-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`PaginatedCrewShares`](/api/types/objects/paginated-crew-shares.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SalvageOrder`](/api/types/objects/salvage-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipMiningOrder`](/api/types/objects/ship-mining-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleMiningOrder`](/api/types/objects/vehicle-mining-order.mdx) <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`WorkOrderInterface`](/api/types/interfaces/work-order-interface.mdx) <Badge class="badge badge--secondary badge--relation" text="interface"/>
+[`OtherOrder`](/api/types/objects/other-order.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`PaginatedCrewShares`](/api/types/objects/paginated-crew-shares.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`SalvageOrder`](/api/types/objects/salvage-order.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ShipMiningOrder`](/api/types/objects/ship-mining-order.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`VehicleMiningOrder`](/api/types/objects/vehicle-mining-order.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`WorkOrderInterface`](/api/types/interfaces/work-order-interface.mdx)  <Badge class="badge badge--secondary badge--relation" text="interface"/>
 
 ### Implemented By
 
-[`SessionUpdateUnion`](/api/types/unions/session-update-union.mdx) <Badge class="badge badge--secondary badge--relation" text="union"/>
+[`SessionUpdateUnion`](/api/types/unions/session-update-union.mdx)  <Badge class="badge badge--secondary badge--relation" text="union"/>
