@@ -19,6 +19,12 @@ jobs:
           cache: yarn
           cache-dependency-path: yarn.lock
 
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install correct Yarn version
+        run: corepack prepare yarn@3.6.3 --activate
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 

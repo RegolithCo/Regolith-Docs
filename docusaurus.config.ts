@@ -147,7 +147,7 @@ const config: Config = {
         src: 'img/RockIcon.svg',
       },
       items: [
-        { to: '/site', label: 'Site', position: 'left' },
+        // { to: '/site', label: 'Site', position: 'left' },
         { to: '/survey-corps', label: 'Survey Corps', position: 'left' },
         { to: '/api', label: 'API', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
