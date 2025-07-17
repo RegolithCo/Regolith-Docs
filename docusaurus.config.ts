@@ -85,6 +85,10 @@ const config: Config = {
     [
       'classic',
       {
+        gtag: {
+          trackingID: 'G-3PVXRZZ8B3',
+          anonymizeIP: true,
+        },
         docs: {
           routeBasePath: '/', // Serve docs at site root
           sidebarPath: './sidebars.ts',
@@ -116,6 +120,18 @@ const config: Config = {
   ],
 
   themeConfig: {
+        algolia: {
+      // The application ID provided by Algolia
+      appId: 'OYB5FRZZH6',
+
+      // Public API key: it is safe to commit it
+      apiKey: 'cd830e3602a8fcf2cbe9847f77186a8a',
+
+      indexName: 'docs.regolith.rocks',
+
+      // Optional: see doc section below
+      contextualSearch: true,
+        },
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: true,
@@ -130,10 +146,11 @@ const config: Config = {
         src: 'img/RockIcon.svg',
       },
       items: [
-        { to: '/api', label: 'API Docs', position: 'left' },
+        { to: '/site', label: 'Site', position: 'left' },
         { to: '/survey-corps', label: 'Survey Corps', position: 'left' },
+        { to: '/api', label: 'API', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
-        { to: '/releases', label: 'Release Notes', position: 'left' },
+        { to: '/releases', label: 'Release Notes', position: 'right' },
         {
           href: 'https://github.com/RegolithCo/Regolith-Docs',
           label: 'GitHub',
