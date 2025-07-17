@@ -1,7 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer'
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
-import { ConfigOptions } from '@graphql-markdown/types'
+// import { ConfigOptions } from '@graphql-markdown/types'
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -39,12 +39,15 @@ const config: Config = {
       {
         schema: './node_modules/@regolithco/common/dist/schema.graphql',
         rootPath: './docs', // docs will be generated under './docs/swapi' (rootPath/baseURL)
-        baseURL: 'api',
-        homepage: './docs/api.md',
+        baseURL: '/api',
+        linkRoot: '/',
+        homepage: './api',
         printTypeOptions: {
           // codeSection: false, // disable code section, same as CLI flag --noCode
           // deprecated: 'group', // group deprecated entities, same as CLI flag --deprecated group
-          exampleSection: true, // disable code section, same as CLI flag --noExample
+          exampleSection: {
+            directive: 'example',
+          },
           hierarchy: 'api', // disable type API grouping, same as CLI flag --hierarchy entity
           // parentTypePrefix: false, // disable parent prefix, same as CLI flag --noParentType
           // relatedTypeSection: false, // disable related type sections, same as CLI flag --noRelatedType
@@ -54,10 +57,27 @@ const config: Config = {
           GraphQLFileLoader: '@graphql-tools/graphql-file-loader', // local file schema
         },
         // Optional advanced settings
-        pretty: true,
+        // pretty: true,
         skipDocDirective: ['@admin_only'],
-        // skip: ['admin_only'],
-      } as ConfigOptions,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: 'releases',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'releases',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './releases',
+      },
     ],
   ],
 
@@ -66,6 +86,7 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/', // Serve docs at site root
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -73,6 +94,8 @@ const config: Config = {
         },
         blog: {
           showReadingTime: true,
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',          
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
@@ -107,11 +130,12 @@ const config: Config = {
         src: 'img/RockIcon.svg',
       },
       items: [
-        { to: '/docs/api', label: 'API Docs', position: 'left' },
-        { to: '/docs/survey', label: 'Survey Corps', position: 'left' },
+        { to: '/api', label: 'API Docs', position: 'left' },
+        { to: '/survey-corps', label: 'Survey Corps', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '/releases', label: 'Release Notes', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/RegolithCo/Regolith-Docs',
           label: 'GitHub',
           position: 'right',
         },
@@ -133,32 +157,32 @@ const config: Config = {
             },
           ],
         },
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
+        // {
+        //   title: 'Docs',
+        //   items: [
+        //     {
+        //       label: 'Tutorial',
+        //       to: '/docs/intro',
+        //     },
+        //   ],
+        // },
+        // {
+        //   title: 'Community',
+        //   items: [
+        //     {
+        //       label: 'Stack Overflow',
+        //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+        //     },
+        //     {
+        //       label: 'Discord',
+        //       href: 'https://discordapp.com/invite/docusaurus',
+        //     },
+        //     {
+        //       label: 'X',
+        //       href: 'https://x.com/docusaurus',
+        //     },
+        //   ],
+        // },
         {
           title: 'More',
           items: [
@@ -166,14 +190,14 @@ const config: Config = {
               label: 'Blog',
               to: '/blog',
             },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
+            // {
+            //   label: 'GitHub',
+            //   href: 'https://github.com/facebook/docusaurus',
+            // },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Regolith Co. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
