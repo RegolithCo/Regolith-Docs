@@ -169,10 +169,10 @@ const config: Config = {
               label: 'GraphQL API',
               to: '/api',
             },
-            {
-              label: 'GraphQL Schema',
-              to: '/docs/api/schema',
-            },
+            // {
+            //   label: 'GraphQL Schema',
+            //   to: '/api/schema',
+            // },
           ],
         },
         // {
