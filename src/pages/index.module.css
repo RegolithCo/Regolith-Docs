@@ -8,6 +8,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-image: url('/background/bg.png');
 }
 
 @media screen and (max-width: 996px) {
@@ -17,7 +18,23 @@
 }
 
 .buttons {
+  /* Add some space between buttons */
+  flex-wrap: wrap;
+  gap: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.buttons .buton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Space between text and logo */
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }

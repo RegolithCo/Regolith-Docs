@@ -1,0 +1,12 @@
+{
+  "position": 1,
+  "label": "General",
+  "collapsible": true,
+  "collapsed": false,
+  "className": "category-general",
+  "link": {
+    "type": "generated-index",
+    "title": "General Documentation",
+    "description": "General documentation for Regolith Co. including FAQs, API docs, and more."
+  }
+}
