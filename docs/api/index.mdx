@@ -3,4 +3,98 @@ title: API Documentation
 sidebar_position: 10
 ---
 
-hello this is right. This is the homepage for the docs
+### GraphQL
+
+The Regolith API uses [GraphQL](https://graphql.org/) for making requests.
+
+GraphQL is a query language for APIs and a runtime for executing those queries by using a type system you define for your data. It is an alternative to **REST** and it is self-documenting (sort of).
+
+You can use tools like [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/), or [Hasura](https://cloud.hasura.io/public/graphiql?endpoint=YOUR_API_URL) to test your API calls and explore the schema.
+
+## Limits
+
+The base level is capped at 3,600 requests per day. If you need more, please contact us on [Discord](https://discord.gg/6TKSYHNJha).
+
+
+### Java / Typescript API Client
+
+Here's some really simple code to get started with the Regolith API in Java or Typescript using nodejs's in-built `fetch` function:
+
+```javascript
+const url = "https://api.regolith.rocks";
+const headers = { "x-api-key": "YOUR_TOKEN_HERE" };
+const query = `
+{
+  profile {
+    userId
+    scName
+    avatarUrl
+    createdAt
+    updatedAt
+  }
+}`;
+fetch(url, {
+  method: "POST",
+  headers: headers,
+  body: JSON.stringify({ query: query }),
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Error:", error));
+```
+
+
+### Python API Client
+
+Here's some simple Python code to get started with the Regolith API:
+
+```python
+import requests
+
+url = "https://api.regolith.rocks"
+headers = {"x-api-key": "YOUR_TOKEN_HERE"}
+query = """
+{
+  profile {
+    userId
+    scName
+    avatarUrl
+    createdAt
+    updatedAt
+  }
+}
+"""
+response = requests.post(url, json={"query": query}, headers=headers)
+print(response.json())
+
+```
+
+## GraphQL
+
+```graphql
+{
+  profile {
+    userId
+    scName
+    avatarUrl
+    createdAt
+    updatedAt
+  }
+}
+```
+
+Then you send it to the API like this:
+
+```
+POST: https://api.regolith.rocks
+Headers: {"x-api-key": "YOUR_TOKEN_HERE"}
+Body (JSON):{"query":"query {
+  profile {
+    userId
+    scName
+    avatarUrl
+    createdAt
+    updatedAt
+  }
+}"}
+```
