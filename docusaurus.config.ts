@@ -73,6 +73,7 @@ const config: Config = {
          * *DO NOT* include a trailing slash.
          */
         routeBasePath: 'releases',
+        showReadingTime: false,
         /**
          * Path to data on filesystem relative to site dir.
          */
