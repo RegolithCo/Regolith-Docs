@@ -6,6 +6,7 @@
   "className": "category-general",
   "link": {
     "type": "generated-index",
+    "slug": "general",
     "title": "General Documentation",
     "description": "General documentation for Regolith Co. including FAQs, API docs, and more."
   }
