@@ -74,6 +74,8 @@ const config: Config = {
          */
         routeBasePath: 'releases',
         showReadingTime: false,
+        blogSidebarTitle: 'All posts',
+        blogSidebarCount: 'ALL',
         /**
          * Path to data on filesystem relative to site dir.
          */
@@ -94,8 +96,6 @@ const config: Config = {
         docs: {
           routeBasePath: '/', // Serve docs at site root
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
@@ -106,8 +106,6 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
@@ -151,13 +149,13 @@ const config: Config = {
         { to: '/general', label: 'Site', position: 'left' },
         { to: '/survey-corps', label: 'Survey Corps', position: 'left' },
         { to: '/api', label: 'API', position: 'left' },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '/blog', label: 'Blog', position: 'right' },
         { to: '/releases', label: 'Release Notes', position: 'right' },
-        {
-          href: 'https://github.com/RegolithCo/Regolith-Docs',
-          label: 'GitHub',
-          position: 'right',
-        },
+        // {
+        //   href: 'https://github.com/RegolithCo/Regolith-Docs',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {

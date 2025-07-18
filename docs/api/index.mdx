@@ -11,6 +11,22 @@ GraphQL is a query language for APIs and a runtime for executing those queries b
 
 You can use tools like [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/), or [Hasura](https://cloud.hasura.io/public/graphiql?endpoint=YOUR_API_URL) to test your API calls and explore the schema.
 
+All GraphQL API calls should be made to the following endpoint using POST requests:
+
+```
+POST: https://api.regolith.rocks
+Headers: {"x-api-key": "YOUR_TOKEN_HERE"}
+Body (JSON):{"query":"query {
+  profile {
+    userId
+    scName
+    avatarUrl
+    createdAt
+    updatedAt
+  }
+}"}
+```
+
 ## Limits
 
 The base level is capped at 3,600 requests per day. If you need more, please contact us on [Discord](https://discord.gg/6TKSYHNJha).
@@ -69,32 +85,3 @@ print(response.json())
 
 ```
 
-## GraphQL
-
-```graphql
-{
-  profile {
-    userId
-    scName
-    avatarUrl
-    createdAt
-    updatedAt
-  }
-}
-```
-
-Then you send it to the API like this:
-
-```
-POST: https://api.regolith.rocks
-Headers: {"x-api-key": "YOUR_TOKEN_HERE"}
-Body (JSON):{"query":"query {
-  profile {
-    userId
-    scName
-    avatarUrl
-    createdAt
-    updatedAt
-  }
-}"}
-```

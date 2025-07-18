@@ -1,8 +1,65 @@
 ---
 title: Frequently Asked Questions
+sidebar_position: 999
 ---
 
 - Questionsa bout the Regolith Survey Corps? Check out the [Survey Corps FAQ](/survey-corps).
+
+## General
+
+### What is this site/app? Where did it come from?
+This tool was created in response to the need for better organization and tracking of mining jobs within the [UEMC organization](https://robertsspaceindustries.com/orgs/UEMC).  
+It started life as a humble [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1Gb3gEjBZ90Aoo53H9oP4yTzbSU2pYKA_G_FSLbVbH10/edit#gid=1678166171), but quickly grew beyond its container.  
+I had always had a clear idea of what I wanted it to be, but I was hesitant to take on the additional responsibility of maintaining a website. However, I eventually made the decision to go ahead and build it. Now here we are. I hope you find it helpful.
+
+
+### How do I report a bug or ask for a new feature?
+If you're a Discord user that's probably the best place.  
+It really helps if you can take a screenshot of the problem and also **_send us your user id_** (you can find it on the bottom of the user profile page).
+
+[Discord Server](https://discord.gg/6TKSYHNJha)
+
+### Star Citizen X.XX is going to change mining. Can Regolith adapt?
+
+CIG is moving fast and Regolith will always try to keep up!  
+There is currently no direct communication between CIG and third-party developers though so we might lag the official patches a bit while we try to get our data and equations working with the new meta.
+
+(BTW, if you're reading this CIG then we'd love to hear from you!)
+
+### Will this tool always be free?
+
+First off, this is not about profit other than getting miners paid in aUEC.  
+It is a passion project that I created for myself, my friends and my Org ([UEMC](https://robertsspaceindustries.com/orgs/UEMC)) to enjoy mining together.  
+**While it is designed to be low maintenance and require minimal resources, that may change if usage spikes and maintenance and server costs rise.**  
+Sort of a nice problem to have, but I'll cross that bridge when/if we get there.
+
+Feel free to use the site as much as you'd like totally free.  
+If you'd like to contribute towards server costs or buy me a coffee on [ko-fi](https://ko-fi.com/regolithco) that would be greatly appreciated.  
+Beyond that, I have no plans to monetize the site through advertising or any other methods.
+
+
+### Will there be data wipes?
+**Yes!**  
+Star Citizen wipes their database when they patch and so will Regolith Co.  
+If that's a problem for you then be sure to regularly download your sessions to either a CSV or JSON files.
+
+Why do we do this?  
+It's just easier than migrating all the numbers in the database to their new values. Or trying to support multiple versions of Star Citizen's mercurial alpha nature.
+
+### What about privacy / security?
+We don't collect any identifying data beyond your Star Citizen username (optional) and your Discord or Google id to enable login.  
+Any other information in the site is only what you choose to add.
+
+**The passwords** you used (Google or Discord) to log in are not stored in any way by Regolith.
+
+**The data** you enter into this tool will be used to calculate stats and interesting metrics but we will never single-out or expose individual data about any user without their express consent.
+
+Currently we don't use Google analytics or any other tracking tools but that might change at some point to help track and estimate my server needs.
+
+If you have concerns about putting sensitive information in here then please **_just don't_**.  
+You can still use the standalone calculators for free
+
+------------------------------------------------------------
 
 ## Accounts / Logging in
 
@@ -27,20 +84,6 @@ There are a number of reasons this might happen:
 - Sometimes the CIG website is unavailable or slow to respond. In these cases just try again later. Also during high-traffic times like near a patch or during a free-fly event CIG has chosen to disable user profile editing. In these cases you will need to wait until they re-enable it.
 - Your Regolith username must match your Star Citizen username exactly (including capitalization).
 
-
-### What is this site/app? Where did it come from?
-This tool was created in response to the need for better organization and tracking of mining jobs within the [UEMC organization](https://robertsspaceindustries.com/orgs/UEMC).  
-It started life as a humble [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1Gb3gEjBZ90Aoo53H9oP4yTzbSU2pYKA_G_FSLbVbH10/edit#gid=1678166171), but quickly grew beyond its container.  
-I had always had a clear idea of what I wanted it to be, but I was hesitant to take on the additional responsibility of maintaining a website. However, I eventually made the decision to go ahead and build it. Now here we are. I hope you find it helpful.
-
-
-### How do I report a bug or ask for a new feature?
-If you're a Discord user that's probably the best place.  
-It really helps if you can take a screenshot of the problem and also **_send us your user id_** (you can find it on the bottom of the user profile page).
-
-[Discord Server](https://discord.gg/6TKSYHNJha)
-
-
 ### I can't log in with either Google or Discord
 In rare cases we've been seeing some logins blocked. There are some things you can try:
 - **Clear your browser cache** and reload the page
@@ -49,14 +92,9 @@ In rare cases we've been seeing some logins blocked. There are some things you c
 
 (BTW, if you're reading this CIG then we'd love to hear from you!)
 
+------------------------------------------------------------
 
-### Star Citizen X.XX is going to change mining. Can Regolith adapt?
-
-CIG is moving fast and Regolith will always try to keep up!  
-There is currently no direct communication between CIG and third-party developers though so we might lag the official patches a bit while we try to get our data and equations working with the new meta.
-
-(BTW, if you're reading this CIG then we'd love to hear from you!)
-
+## Sessions
 
 ### In my sessions can I create a work order for someone else?
 
@@ -64,44 +102,15 @@ There is currently no direct communication between CIG and third-party developer
 Look for the "Alternate Seller" switch. This will let you specify another user as the seller, even if they aren't logged into Regolith or your session. Once you do this the math will reflect the new seller and you can tell them who they owe and how much.
 
 
-### Why do sessions close after 12 hours?
+### Why do sessions close after 72 hours?
 
-You may notice that sessions will automatically close if there is no activity for 12 hours.  
+You may notice that sessions will automatically close if there is no activity for 72 hours.  
 This is to discourage never-ending sessions from clogging up the database and to keep things performant and tidy. Once closed sessions cannot be re-opened.
 
-There may be times when you need to keep a session open longer than 12 hours. In those cases all you need to do is update something in your session and that will reset the counter. You could add and delete a work order or change the session description etc.
+There may be times when you need to keep a session open longer than 72 hours. In those cases all you need to do is update something in your session and that will reset the counter. You could add and delete a work order or change the session description etc.
+
+### Can closed sessions be reopened?
+
+Yes. You can always reopen a session if you need to add more data to it. You can find a button for this in the session settings.
 
 
-### Will this tool always be free?
-
-First off, this is not about profit other than getting miners paid in aUEC.  
-It is a passion project that I created for myself, my friends and my Org ([UEMC](https://robertsspaceindustries.com/orgs/UEMC)) to enjoy mining together.  
-**While it is designed to be low maintenance and require minimal resources, that may change if usage spikes and maintenance and server costs rise.**  
-Sort of a nice problem to have, but I'll cross that bridge when/if we get there.
-
-Feel free to use the site as much as you'd like totally free.  
-If you'd like to contribute towards server costs or buy me a coffee on [ko-fi](https://ko-fi.com/regolithco) that would be greatly appreciated.  
-Beyond that, I have no plans to monetize the site through advertising or any other methods.
-
-
-### Will there be data wipes?
-**Yes!**  
-Star Citizen wipes their database when they patch and so will Regolith Co.  
-If that's a problem for you then be sure to regularly download your sessions to either a CSV or JSON files.
-
-Why do we do this?  
-It's just easier than migrating all the numbers in the database to their new values. Or trying to support multiple versions of Star Citizen's mercurial alpha nature.
-
-
-### What about privacy / security?
-We don't collect any identifying data beyond your Star Citizen username (optional) and your Discord or Google id to enable login.  
-Any other information in the site is only what you choose to add.
-
-**The passwords** you used (Google or Discord) to log in are not stored in any way by Regolith.
-
-**The data** you enter into this tool will be used to calculate stats and interesting metrics but we will never single-out or expose individual data about any user without their express consent.
-
-Currently we don't use Google analytics or any other tracking tools but that might change at some point to help track and estimate my server needs.
-
-If you have concerns about putting sensitive information in here then please **_just don't_**.  
-You can still use the standalone calculators for free

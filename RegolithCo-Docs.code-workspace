@@ -1,7 +1,15 @@
 {
   "folders": [
     {
-      "name": "📖 Regolith Docs",
+      "name": "📖 DOCS",
+      "path": "./docs"
+    },
+    {
+      "name": "👾 API",
+      "path": "."
+    },
+    {
+      "name": "🏠 HOME",
       "path": "."
     },
     // We can symlink this to the git repo to work on it concurrently

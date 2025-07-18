@@ -15,6 +15,11 @@ export default [
         sourceType: 'module',
         ecmaFeatures: { jsx: true },
       },
+      globals: {
+        window: 'readonly',
+        document: 'readonly',
+        // add other browser globals as needed
+      },
     },
     plugins: {
       '@typescript-eslint': tseslint,
