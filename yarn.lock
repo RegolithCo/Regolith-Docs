@@ -207,9 +207,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/client@npm:^3.13.8":
-  version: 3.13.8
-  resolution: "@apollo/client@npm:3.13.8"
+"@apollo/client@npm:^3.14.0":
+  version: 3.14.0
+  resolution: "@apollo/client@npm:3.14.0"
   dependencies:
     "@graphql-typed-document-node/core": ^3.1.1
     "@wry/caches": ^1.0.0
@@ -239,7 +239,7 @@ __metadata:
       optional: true
     subscriptions-transport-ws:
       optional: true
-  checksum: 39f058c2681aaa1f95275d8e856976fb1e15f30bdac33758d3cf3c8dc08f111c1cdfa3a30a777ad1088b950cb94336197a81d136a43faa7470cbf2c9746f53ce
+  checksum: 682a8c8103c80940ee89e0f5d6a5dba3d47dd6915b7016f4d19bcebabbe8c6d0d52ca9ff9598d50d4bc0711f8ef66b4f9b8e832494244bcdf3b91377e489e293
   languageName: node
   linkType: hard
 
@@ -3429,18 +3429,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@regolithco/common@npm:^1.4.1":
-  version: 1.4.1
-  resolution: "@regolithco/common@npm:1.4.1"
+"@regolithco/common@npm:^1.4.7":
+  version: 1.4.7
+  resolution: "@regolithco/common@npm:1.4.7"
   dependencies:
-    "@apollo/client": ^3.13.8
+    "@apollo/client": ^3.14.0
     blob: ^0.1.0
     buffer: ^6.0.3
-    dayjs: ^1.11.13
+    dayjs: ^1.11.18
     lodash: ^4.17.21
     loglevel: ^1.9.2
     numeral: ^2.0.6
-  checksum: 82dff02f97fd3be6a40924e17bdb8f9f033dd4ce37c78a64e80095fd5d55c34a3960ad006b0a5192e863038c8c0986c712625179b9183ff22846a9df35a2e016
+  checksum: 9ad83beeeaca998eca6669426bf79f83feb0ca1dbe96365064ba87eb3e50ef43836e9692d30a9dfbd43f5c17968eeaec4335d65accb4af783931347eb7aa1fb5
   languageName: node
   linkType: hard
 
@@ -3456,7 +3456,7 @@ __metadata:
     "@docusaurus/types": 3.8.1
     "@graphql-markdown/docusaurus": ^1.30.1
     "@mdx-js/react": ^3.0.0
-    "@regolithco/common": ^1.4.1
+    "@regolithco/common": ^1.4.7
     "@typescript-eslint/eslint-plugin": 8.37.0
     "@typescript-eslint/parser": 8.37.0
     clsx: ^2.0.0
@@ -6150,10 +6150,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.11.13":
-  version: 1.11.13
-  resolution: "dayjs@npm:1.11.13"
-  checksum: f388db88a6aa93956c1f6121644e783391c7b738b73dbc54485578736565c8931bdfba4bb94e9b1535c6e509c97d5deb918bbe1ae6b34358d994de735055cca9
+"dayjs@npm:^1.11.18":
+  version: 1.11.19
+  resolution: "dayjs@npm:1.11.19"
+  checksum: dfafcca2c67cc6e542fd880d77f1d91667efd323edc28f0487b470b184a11cc97696163ed5be1142ea2a031045b27a0d0555e72f60a63275e0e0401ac24bea5d
   languageName: node
   linkType: hard
 
