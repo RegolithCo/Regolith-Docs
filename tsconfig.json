@@ -5,5 +5,6 @@
     "lib": ["dom", "esnext"],
     "baseUrl": "."
   },
-  "exclude": [".docusaurus", "build"]
+  "exclude": [".docusaurus", "build"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "docusaurus.config.ts", "sidebars.ts"]
 }

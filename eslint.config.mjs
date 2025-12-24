@@ -11,14 +11,34 @@ export default [
     languageOptions: {
       parser: tsparser,
       parserOptions: {
-        ecmaVersion: 2018,
+        ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: { jsx: true },
       },
       globals: {
+        // Browser globals
         window: 'readonly',
         document: 'readonly',
-        // add other browser globals as needed
+        navigator: 'readonly',
+        console: 'readonly',
+        HTMLElement: 'readonly',
+        HTMLCanvasElement: 'readonly',
+        CanvasRenderingContext2D: 'readonly',
+        CanvasGradient: 'readonly',
+        ResizeObserver: 'readonly',
+        ResizeObserverEntry: 'readonly',
+        requestAnimationFrame: 'readonly',
+        cancelAnimationFrame: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
+
+        // Node globals (for config files)
+        process: 'readonly',
+        __dirname: 'readonly',
+        module: 'readonly',
+        require: 'readonly',
       },
     },
     plugins: {
@@ -42,11 +62,12 @@ export default [
           caughtErrorsIgnorePattern: '^_',
         },
       ],
-      'no-explicity-any': 'off',
+      'no-explicit-any': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-empty-interface': 'off',
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
+      'no-undef': 'off', // TypeScript handles this
     },
     settings: {
       react: {

@@ -1,14 +1,19 @@
 import React from 'react'
 import type { Props } from '@theme/Root'
 import { useScrollFix } from '../lib/useScrollFix'
+import { StarsParallax } from '../components/StarsParallax'
 
-/**
- * Note: This component is used to wrap the entire application.
- */
+// Note: This component is used to wrap the entire application.
 export default function Root({ children }: Props) {
   // This effect scrolls to the element with the ID from the URL hash when the page loads.
   // This is a workaround for Docusaurus's default behavior of scrolling to the top on page load.
   useScrollFix()
 
-  return <div>{children}</div>
+  // The wrapper div is set to relative so the background can be absolutely positioned
+  return (
+    <div>
+      <StarsParallax />
+      <div style={{ position: 'relative', zIndex: 1 }}>{children}</div>
+    </div>
+  )
 }
