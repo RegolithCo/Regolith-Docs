@@ -4,7 +4,6 @@ import type * as Preset from '@docusaurus/preset-classic'
 // import { ConfigOptions } from '@graphql-markdown/types'
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
   title: 'Regolith Docs',
   tagline: 'Documentation for Regolith.rocks',
@@ -174,32 +173,6 @@ const config: Config = {
             // },
           ],
         },
-        // {
-        //   title: 'Docs',
-        //   items: [
-        //     {
-        //       label: 'Tutorial',
-        //       to: '/docs/intro',
-        //     },
-        //   ],
-        // },
-        // {
-        //   title: 'Community',
-        //   items: [
-        //     {
-        //       label: 'Stack Overflow',
-        //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-        //     },
-        //     {
-        //       label: 'Discord',
-        //       href: 'https://discordapp.com/invite/docusaurus',
-        //     },
-        //     {
-        //       label: 'X',
-        //       href: 'https://x.com/docusaurus',
-        //     },
-        //   ],
-        // },
         {
           title: 'More',
           items: [
@@ -207,10 +180,10 @@ const config: Config = {
               label: 'Blog',
               to: '/blog',
             },
-            // {
-            //   label: 'GitHub',
-            //   href: 'https://github.com/facebook/docusaurus',
-            // },
+            {
+              label: 'Support on Ko-fi',
+              href: 'https://ko-fi.com/regolithco',
+            },
           ],
         },
       ],
