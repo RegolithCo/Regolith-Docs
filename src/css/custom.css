@@ -37,7 +37,7 @@
   --ifm-font-color-secondary: #BBFFFF;
   --glass-bg: rgba(10, 14, 26, 0.3);
   --glass-border: rgba(251, 192, 45, 0.2);
-  --glass-blur: 12px;
+  --glass-blur: 6px;
   --glow-color: rgba(251, 192, 45, 0.4);
 }
 
@@ -49,10 +49,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Glassmorphism Article */
 article {
-  background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
+  /* border: 1px solid var(--glass-border); */
   border-radius: 16px;
   padding: 2rem;
   transition: all 0.3s ease;
@@ -81,23 +80,6 @@ article {
   100% { text-shadow: 0 0 10px rgba(251, 192, 45, 0.2); }
 }
 
-/* Utility Classes */
-.glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.glass-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px var(--glow-color);
-}
-
 .hero-glow {
   animation: titleGlow 4s infinite ease-in-out;
 }
@@ -120,4 +102,12 @@ article {
   color: #000 !important;
   box-shadow: 0 0 20px var(--glow-color);
   transform: translateY(-2px);
+}
+
+/* Now make it responsive */
+@media (max-width: 768px) {
+  article {
+    padding: 0rem;
+  }
+
 }
