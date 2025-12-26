@@ -11,9 +11,11 @@ export default function Root({ children }: Props) {
 
   // The wrapper div is set to relative so the background can be absolutely positioned
   return (
-    <div>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <StarsParallax />
-      <div style={{ position: 'relative', zIndex: 1 }}>{children}</div>
+      <div style={{ position: 'relative', zIndex: 1, flex: '1 0 auto', display: 'flex', flexDirection: 'column' }}>
+        {children}
+      </div>
     </div>
   )
 }

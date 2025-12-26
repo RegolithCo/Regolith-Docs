@@ -29,6 +29,9 @@ function HomepageHeader() {
           <Link className="button button--secondary button--lg" to="/api">
             👾 API Docs
           </Link>
+          <Link className="button button--secondary button--lg" href="https://shop.regolith.rocks/">
+            👕 Merch Store
+          </Link>
         </div>
       </div>
     </header>

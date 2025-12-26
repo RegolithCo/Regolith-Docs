@@ -184,6 +184,10 @@ const config: Config = {
               label: 'Support on Ko-fi',
               href: 'https://ko-fi.com/regolithco',
             },
+            {
+              label: 'Merch Store',
+              href: 'https://shop.regolith.rocks/',
+            },
           ],
         },
       ],
