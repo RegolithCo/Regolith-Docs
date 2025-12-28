@@ -35,7 +35,7 @@
   --ifm-font-family-mono: 'Roboto Mono', monospace;
   --ifm-font-color-base: #ffffff;
   --ifm-font-color-secondary: #BBFFFF;
-  --glass-bg: rgba(10, 14, 26, 0.3);
+  --glass-bg: rgba(10, 14, 26, 0.1);
   --glass-border: rgba(251, 192, 45, 0.2);
   --glass-blur: 6px;
   --glow-color: rgba(251, 192, 45, 0.4);
@@ -55,10 +55,18 @@ article {
   border-radius: 16px;
   padding: 2rem;
   transition: all 0.3s ease;
+  will-change: backdrop-filter;
+  overflow: visible;
+  background: rgba(255,255,255,0.4); /* fallback for all themes */
+  position: relative;
 }
 
 [data-theme='light'] article {
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--glass-bg);
+}
+
+[data-theme='dark'] article {
+  background: var(--glass-bg);
 }
 
 /* Animations */
