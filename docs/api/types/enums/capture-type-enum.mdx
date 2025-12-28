@@ -1,6 +1,6 @@
 ---
-id: delete-user-profile
-title: deleteUserProfile
+id: capture-type-enum
+title: CaptureTypeEnum
 ---
 
 
@@ -43,21 +43,29 @@ No description
 
 
 ```graphql
-deleteUserProfile(
-  leaveData: Boolean
-): ID
+enum CaptureTypeEnum {
+  ShipMiningOrderCapture
+  ShipRockCapture
+}
 ```
 
 
 
 
-### Arguments
+### Values
 
-#### [<code style={{ fontWeight: 'normal' }}>deleteUserProfile.<b>leaveData</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean</b></code>](/api/types/scalars/boolean.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
-If true, leaves user data in place after deletion.
+#### [<code style={{ fontWeight: 'normal' }}>CaptureTypeEnum.<b>ShipMiningOrderCapture</b></code>](#)  
 
 
-### Type
 
-#### [<code style={{ fontWeight: 'normal' }}><b>ID</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
-The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
+#### [<code style={{ fontWeight: 'normal' }}>CaptureTypeEnum.<b>ShipRockCapture</b></code>](#)  
+
+
+
+
+
+
+
+### Member Of
+
+[`submitOCRImage`](/api/operations/queries/submit-ocrimage.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/>

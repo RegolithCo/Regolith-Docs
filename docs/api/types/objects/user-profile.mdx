@@ -206,8 +206,71 @@ type UserProfile implements UserInterface {
 
 
 
+### Example
+
+
+```graphql
+{
+  "discordGuilds": [
+    {}
+  ],
+  "friends": [],
+  "joinedSessions": {
+    "items": [
+      {
+        "activeMembers": {
+          "items": [
+            {
+              "loadout": {
+                "activeLasers": [
+                  {
+                    "modules": [],
+                    "modulesActive": []
+                  }
+                ],
+                "inventoryGadgets": [],
+                "inventoryLasers": [],
+                "inventoryModules": [],
+                "owner": {}
+              }
+            }
+          ]
+        },
+        "mentionedUsers": [
+          {}
+        ],
+        "scouting": {
+          "items": []
+        },
+        "sessionSettings": {
+          "lockToDiscordGuild": {},
+          "workOrderDefaults": {
+            "crewShares": [
+              {}
+            ],
+            "sellStores": {}
+          }
+        },
+        "summary": {
+          "refineries": [],
+          "scoutingFindsByType": {},
+          "workOrderSummaries": [
+            {}
+          ]
+        },
+        "workOrders": {
+          "items": []
+        }
+      }
+    ]
+  },
+  "loadouts": []
+}
+```
+
+
 
 
 ### Returned By
 
-[`addFriends`](/api/operations/mutations/add-friends.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`blockProspector`](#)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`mergeAccount`](#)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`mergeAccountAdmin`](#)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`profile`](/api/operations/queries/profile.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/><Bullet />[`refreshAvatar`](/api/operations/mutations/refresh-avatar.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`removeFriends`](/api/operations/mutations/remove-friends.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`setUserPlan`](#)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateUserProfile`](/api/operations/mutations/update-user-profile.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`userAPIKey`](/api/operations/mutations/user-apikey.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`verifyUserProfile`](/api/operations/mutations/verify-user-profile.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>
+[`addFriends`](/api/operations/mutations/add-friends.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`blockProspector`](#)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`mergeAccount`](#)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`mergeAccountAdmin`](/api/operations/mutations/merge-account-admin.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`profile`](/api/operations/queries/profile.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/><Bullet />[`refreshAvatar`](/api/operations/mutations/refresh-avatar.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`removeFriends`](/api/operations/mutations/remove-friends.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`setUserPlan`](#)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateUserProfile`](/api/operations/mutations/update-user-profile.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`userAPIKey`](/api/operations/mutations/user-apikey.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`verifyUserProfile`](/api/operations/mutations/verify-user-profile.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>

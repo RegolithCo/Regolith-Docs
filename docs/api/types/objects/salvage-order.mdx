@@ -62,7 +62,7 @@ type SalvageOrder implements WorkOrderInterface {
   sellerscName: String
   session: Session
   sessionId: ID!
-  shareAmount: Int
+  shareAmount: BigInt
   state: WorkOrderStateEnum!
   updatedAt: Timestamp!
   version: String!
@@ -147,7 +147,7 @@ the owner is assumed to be the delegate
 
 
 
-#### [<code style={{ fontWeight: 'normal' }}>SalvageOrder.<b>shareAmount</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>SalvageOrder.<b>shareAmount</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>BigInt</b></code>](/api/types/scalars/big-int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
 
 
@@ -169,6 +169,70 @@ the owner is assumed to be the delegate
 
 
 
+
+
+### Example
+
+
+```graphql
+{
+  "crewShares": [
+    {
+      "session": {
+        "activeMembers": {
+          "items": [
+            {
+              "loadout": {
+                "activeLasers": [
+                  {
+                    "modules": [],
+                    "modulesActive": []
+                  }
+                ],
+                "inventoryGadgets": [],
+                "inventoryLasers": [],
+                "inventoryModules": [],
+                "owner": {}
+              }
+            }
+          ]
+        },
+        "mentionedUsers": [
+          {}
+        ],
+        "scouting": {
+          "items": []
+        },
+        "sessionSettings": {
+          "lockToDiscordGuild": {},
+          "workOrderDefaults": {
+            "crewShares": [
+              {}
+            ],
+            "sellStores": {}
+          }
+        },
+        "summary": {
+          "refineries": [],
+          "scoutingFindsByType": {},
+          "workOrderSummaries": [
+            {}
+          ]
+        },
+        "workOrders": {
+          "items": []
+        }
+      }
+    }
+  ],
+  "expenses": [
+    {}
+  ],
+  "salvageOres": [
+    {}
+  ]
+}
+```
 
 
 

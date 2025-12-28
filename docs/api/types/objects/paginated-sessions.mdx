@@ -64,6 +64,62 @@ type PaginatedSessions {
 
 
 
+### Example
+
+
+```graphql
+{
+  "items": [
+    {
+      "activeMembers": {
+        "items": [
+          {
+            "loadout": {
+              "activeLasers": [
+                {
+                  "modules": [],
+                  "modulesActive": []
+                }
+              ],
+              "inventoryGadgets": [],
+              "inventoryLasers": [],
+              "inventoryModules": [],
+              "owner": {}
+            }
+          }
+        ]
+      },
+      "mentionedUsers": [
+        {}
+      ],
+      "scouting": {
+        "items": []
+      },
+      "sessionSettings": {
+        "lockToDiscordGuild": {},
+        "workOrderDefaults": {
+          "crewShares": [
+            {}
+          ],
+          "sellStores": {}
+        }
+      },
+      "summary": {
+        "refineries": [],
+        "scoutingFindsByType": {},
+        "workOrderSummaries": [
+          {}
+        ]
+      },
+      "workOrders": {
+        "items": []
+      }
+    }
+  ]
+}
+```
+
+
 
 
 ### Member Of

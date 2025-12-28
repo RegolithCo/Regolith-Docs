@@ -46,7 +46,7 @@ No description
 type SalvageWreck {
   isShip: Boolean!
   salvageOres: [SalvageWreckOre!]!
-  sellableAUEC: Int
+  sellableAUEC: BigInt
   shipCode: String
   state: WreckStateEnum!
 }
@@ -65,7 +65,7 @@ type SalvageWreck {
 
 
 
-#### [<code style={{ fontWeight: 'normal' }}>SalvageWreck.<b>sellableAUEC</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>SalvageWreck.<b>sellableAUEC</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>BigInt</b></code>](/api/types/scalars/big-int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
 
 
@@ -77,6 +77,18 @@ type SalvageWreck {
 
 
 
+
+
+### Example
+
+
+```graphql
+{
+  "salvageOres": [
+    {}
+  ]
+}
+```
 
 
 

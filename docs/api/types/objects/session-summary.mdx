@@ -44,7 +44,7 @@ No description
 
 ```graphql
 type SessionSummary {
-  aUEC: Int
+  aUEC: BigInt
   activeMembers: Int
   allPaid: Boolean
   collectedSCU: Float
@@ -63,7 +63,7 @@ type SessionSummary {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>aUEC</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](/api/types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>SessionSummary.<b>aUEC</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>BigInt</b></code>](/api/types/scalars/big-int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
 
 
 
@@ -107,6 +107,20 @@ type SessionSummary {
 
 
 
+
+
+### Example
+
+
+```graphql
+{
+  "refineries": [],
+  "scoutingFindsByType": {},
+  "workOrderSummaries": [
+    {}
+  ]
+}
+```
 
 
 

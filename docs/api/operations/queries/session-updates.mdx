@@ -39,7 +39,7 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+Fetch updates for a session since the last check timestamp.
 
 
 ```graphql
@@ -55,13 +55,14 @@ sessionUpdates(
 ### Arguments
 
 #### [<code style={{ fontWeight: 'normal' }}>sessionUpdates.<b>lastCheck</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](/api/types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
-
+(Optional) The timestamp of the last check for updates.
 
 
 #### [<code style={{ fontWeight: 'normal' }}>sessionUpdates.<b>sessionId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](/api/types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
-
+The unique identifier (GUID) of the session.
 
 
 ### Type
 
-#### [<code style={{ fontWeight: 'normal' }}><b>SessionUpdate</b></code>](/api/types/objects/session-update.mdx) <Badge class="badge badge--secondary " text="object"/>
+#### [<code style={{ fontWeight: 'normal' }}><b>SessionUpdate</b></code>](/api/types/objects/session-update.mdx) <Badge class="badge badge--secondary " text="object"/> 
+This is the object that represents a session update.
