@@ -26,7 +26,8 @@
     "graphql": "^16.11.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-modal": "^3.16.3"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.8.1",
