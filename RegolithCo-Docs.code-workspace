@@ -22,8 +22,6 @@
   "settings": {
     "npm.packageManager": "yarn",
     "eslint.nodePath": ".yarn/sdks",
-    "typescript.tsdk": "🏠 Home/.yarn/sdks/typescript/lib",
-    "typescript.enablePromptUseWorkspaceTsdk": true,
     "window.title": "${rootName}${separator}${activeEditorShort}",
     "workbench.colorCustomizations": {
 			"titleBar.activeBackground": "#001768",

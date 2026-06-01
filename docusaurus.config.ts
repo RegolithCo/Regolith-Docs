@@ -91,18 +91,18 @@ const config: Config = {
   ],
 
   themeConfig: {
-    algolia: {
-      // The application ID provided by Algolia
-      appId: 'OYB5FRZZH6',
+    // algolia: {
+    //   // The application ID provided by Algolia
+    //   appId: 'OYB5FRZZH6',
 
-      // Public API key: it is safe to commit it
-      apiKey: 'cd830e3602a8fcf2cbe9847f77186a8a',
+    //   // Public API key: it is safe to commit it
+    //   apiKey: 'cd830e3602a8fcf2cbe9847f77186a8a',
 
-      indexName: 'docs.regolith.rocks',
+    //   indexName: 'docs.regolith.rocks',
 
-      // Optional: see doc section below
-      contextualSearch: true,
-    },
+    //   // Optional: see doc section below
+    //   contextualSearch: true,
+    // },
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: true,
@@ -117,8 +117,8 @@ const config: Config = {
         src: 'img/RockIcon.svg',
       },
       items: [
-        { to: '/general', label: 'Site', position: 'left' },
-        { to: '/survey-corps', label: 'Survey Corps', position: 'left' },
+        // { to: '/general', label: 'Site', position: 'left' },
+        // { to: '/survey-corps', label: 'Survey Corps', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'right' },
         { to: '/releases', label: 'Release Notes', position: 'right' },
         // {
