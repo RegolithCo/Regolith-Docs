@@ -33,34 +33,6 @@ const config: Config = {
 
   plugins: [
     [
-      '@graphql-markdown/docusaurus',
-      /** @type {import('@graphql-markdown/types').ConfigOptions} */
-      {
-        schema: './node_modules/@regolithco/common/dist/schema.graphql',
-        rootPath: './docs', // docs will be generated under './docs/swapi' (rootPath/baseURL)
-        baseURL: '/api',
-        linkRoot: '/',
-        homepage: './api',
-        printTypeOptions: {
-          // codeSection: false, // disable code section, same as CLI flag --noCode
-          // deprecated: 'group', // group deprecated entities, same as CLI flag --deprecated group
-          exampleSection: {
-            directive: 'example',
-          },
-          hierarchy: 'api', // disable type API grouping, same as CLI flag --hierarchy entity
-          // parentTypePrefix: false, // disable parent prefix, same as CLI flag --noParentType
-          // relatedTypeSection: false, // disable related type sections, same as CLI flag --noRelatedType
-          // typeBadges: false, // disable type attribute badges, same as CLI flag --noTypeBadges
-        },
-        loaders: {
-          GraphQLFileLoader: '@graphql-tools/graphql-file-loader', // local file schema
-        },
-        // Optional advanced settings
-        // pretty: true,
-        skipDocDirective: ['@admin_only'],
-      },
-    ],
-    [
       '@docusaurus/plugin-content-blog',
       {
         /**
@@ -147,7 +119,6 @@ const config: Config = {
       items: [
         { to: '/general', label: 'Site', position: 'left' },
         { to: '/survey-corps', label: 'Survey Corps', position: 'left' },
-        { to: '/api', label: 'API', position: 'left' },
         { to: '/blog', label: 'Blog', position: 'right' },
         { to: '/releases', label: 'Release Notes', position: 'right' },
         // {
@@ -161,28 +132,11 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'API',
-          items: [
-            {
-              label: 'GraphQL API',
-              to: '/api',
-            },
-            // {
-            //   label: 'GraphQL Schema',
-            //   to: '/api/schema',
-            // },
-          ],
-        },
-        {
           title: 'More',
           items: [
             {
               label: 'Blog',
               to: '/blog',
-            },
-            {
-              label: 'Support on Ko-fi',
-              href: 'https://ko-fi.com/regolithco',
             },
             {
               label: 'Merch Store',
