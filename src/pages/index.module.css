@@ -44,8 +44,17 @@
   flex-wrap: wrap;
 }
 
-.mainContent {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  position: relative;
+.o7 {
+  font-size: 5rem;
+  font-family: 'Roboto Mono', monospace;
+  color: var(--ifm-color-primary);
+  filter: drop-shadow(0 0 20px rgba(251, 192, 45, 0.6));
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.footnote {
+  margin-top: 2.5rem;
+  font-size: 0.95rem;
+  opacity: 0.6;
 }
